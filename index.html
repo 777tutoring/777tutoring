@@ -1190,7 +1190,7 @@
             <div style="display:flex;align-items:center;gap:1rem;">
               <!-- EE Icon -->
               <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h8"/></svg></span>
-              <span>Extended Essay (EE) <span style="color:var(--muted);font-size:0.97em;">(English, Physics, Math, Economics)</span></span>
+              <span>Extended Essay</span>
             </div>
             <div style="display:flex;align-items:center;gap:1rem;">
               <!-- CAS Icon -->
@@ -1404,12 +1404,12 @@
             <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£150–£200</div>
             <div style="flex:3 1 0;color:var(--muted);">Detailed Extended Essay review with actionable feedback to maximize your marks</div>
           </div>
-          <div style="display:flex;align-items:center;background:#fff;padding:1.1em 0.7em;font-size:1.05rem;border-radius:0 0 16px 16px;">
+          <div style="display:flex;align-items:center;background:#fff;padding:1.1em 0.7em;font-size:1.05rem;border-bottom:1.5px solid #000080;">
             <div style="flex:1.5 1 0;font-weight:600;color:var(--accent-blue);">University Advising (1 hour)</div>
             <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£65</div>
             <div style="flex:3 1 0;color:var(--muted);">Personalized university admissions guidance and application support</div>
           </div>
-          <div style="display:flex;align-items:center;background:#f8fafb;padding:1.1em 0.7em;font-size:1.05rem;border-bottom:1.5px solid #000080;">
+          <div style="display:flex;align-items:center;background:#f8fafb;padding:1.1em 0.7em;font-size:1.05rem;border-radius:0 0 16px 16px;">
             <div style="flex:1.5 1 0;font-weight:600;color:var(--accent-blue);">Mock Interviews</div>
             <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£80</div>
             <div style="flex:3 1 0;color:var(--muted);">One hour of realistic university or job interview practice with expert feedback and tips for improvement</div>
@@ -1566,6 +1566,8 @@
     const packagesLink = document.querySelector('a[href="#packages"]');
     const whoWeAreLink = document.getElementById('who-we-are-link');
     const theProcessLink = document.getElementById('the-process-link');
+    const testimonialsLink = document.querySelector('a[href="#testimonials"]');
+    const careersLinkHeader = document.querySelector('a[href="#careers-section"]');
     const aLevelSection = document.getElementById('a-level-section');
     const packagesSection = document.getElementById('packages-section');
     const whoWeAreSection = document.getElementById('who-we-are-section');
@@ -1620,7 +1622,7 @@
       if (packagesLink) packagesLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
     }
-    if (ibLink && aLevelLink && packagesLink && whoWeAreLink && theProcessLink) {
+    if (ibLink && aLevelLink && packagesLink && whoWeAreLink && theProcessLink && testimonialsLink && careersLinkHeader) {
       ibLink.addEventListener('click', function(e) {
         e.preventDefault();
         showIB();
@@ -1659,6 +1661,22 @@
         if (whoWeAreLink) whoWeAreLink.classList.remove('active');
         theProcessLink.classList.add('active');
       });
+      testimonialsLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        // Always show IB section and scroll to testimonials
+        showIB();
+        document.body.classList.remove('a-level-active');
+        setTimeout(function() {
+          var testimonialsSection = document.getElementById('testimonials');
+          if (testimonialsSection) {
+            testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      });
+      careersLinkHeader.addEventListener('click', function(e) {
+        e.preventDefault();
+        if (careersLink) careersLink.click(); // Open the modal from anywhere
+      });
     }
     // Ensure correct background on page load
     showIB();
@@ -1686,21 +1704,22 @@
     // Show success message on submit
     document.getElementById('consultation-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      var form = this;
-      fetch(form.action, {
-        method: 'POST',
-        body: new FormData(form),
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          form.style.display = 'none';
-          document.getElementById('consultation-success').style.display = 'block';
-        } else {
-          alert('There was a problem sending your request. Please try again.');
-        }
-      }).catch(() => {
-        alert('There was a problem sending your request. Please try again.');
-      });
+      var name = this.elements['name'].value;
+      var grade = this.elements['grade'].value;
+      var email = this.elements['email'].value;
+      var subject = this.elements['subject'].value;
+      var other = this.elements['other'].value;
+      var mailto = 'mailto:admin@777tutoring.com'
+        + '?subject=' + encodeURIComponent('Free Consultation Request from ' + name)
+        + '&body=' + encodeURIComponent(
+            'Name: ' + name + '\n'
+          + 'Grade/Year: ' + grade + '\n'
+          + 'Email: ' + email + '\n'
+          + 'Subject(s): ' + subject + '\n'
+          + 'Other Information: ' + other
+        );
+      window.location.href = mailto;
+      closeConsultationModal();
     });
     // How It Works link functionality
     const howLink = document.getElementById('how-link');
