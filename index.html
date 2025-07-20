@@ -123,7 +123,7 @@
       font-size: 1.2rem;
       margin-bottom: 2rem;
       color: var(--muted);
-      max-width: 700px;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
@@ -150,11 +150,12 @@
       justify-content: center;
     }
     .hero-img img {
-      width: 320px;
+      width: 420px;
       max-width: 100%;
-      border-radius: 18px;
-      object-fit: cover;
-      box-shadow: 0 2px 16px #4a90e220;
+      border-radius: 0;
+      object-fit: contain;
+      box-shadow: none;
+      background: none;
     }
     .container {
       max-width: 1000px;
@@ -746,7 +747,8 @@
         <a href="#home" class="active" id="ib-link">IB Tutoring</a>
         <a href="#a-level" id="a-level-link">A Level Tutoring</a>
         <a href="#packages">Packages</a>
-        <a href="#how">How It Works</a>
+        <a href="#who-we-are" id="who-we-are-link">Who We Are</a>
+        <a href="#how" id="how-link">How It Works</a>
         <a href="#testimonials">Testimonials & FAQ</a>
         <a href="#careers-section" id="careers-link">Careers</a>
       </nav>
@@ -755,12 +757,12 @@
 
   <section class="hero" id="home">
     <div class="hero-text">
-      <h1>Expert IB Diploma Programme Support</h1>
+      <h1>Expert IB Programme Support</h1>
       <p>The International Baccalaureate (IB) Diploma programme syllabus is challenging. Our tutors help you master the curriculum, excel in subject groups, and achieve your academic and university goals.</p>
       <button class="cta-btn">Book a Free Consultation</button>
     </div>
     <div class="hero-img">
-      <img src="hero.jpg" alt="Tutoring Session" />
+      <img src="drawing tutor-2 see through.png" alt="Tutoring Session" />
     </div>
   </section>
 
@@ -768,12 +770,12 @@
   <div id="a-level-section" style="display:none;">
     <section class="hero" style="margin-bottom:2.5rem;">
       <div class="hero-text">
-        <h1>Expert A Level Tutoring</h1>
+        <h1>Expert A Level Support</h1>
         <p>Our A Level tutors are subject specialists with a proven track record of helping students achieve top grades. We offer tailored support for all major A Level subjects, exam boards, and university admissions tests.</p>
-        <button class="cta-btn">Book a Free A Level Consultation</button>
+        <button class="cta-btn">Book a Free Consultation</button>
       </div>
       <div class="hero-img">
-        <img src="hero.jpg" alt="A Level Tutoring Session" />
+        <img src="drawing tutor-2 see through.png" alt="A Level Tutoring Session" />
       </div>
     </section>
     <div class="container">
@@ -811,7 +813,7 @@
         </div>
       </section>
       <section id="a-level-subjects">
-        <h2>A Level Subjects Offered</h2>
+        <h2>Subjects Offered</h2>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;">
           <div style="display:flex;align-items:center;gap:1rem;">
             <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">M</text></svg></span>
@@ -838,28 +840,34 @@
             <span>Economics</span>
           </div>
           <div style="display:flex;align-items:center;gap:1rem;">
-            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg></span>
-            <span>English Literature</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:1rem;">
-            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5 12 2"/></svg></span>
-            <span>History</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:1rem;">
             <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/></svg></span>
             <span>Geography</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:1rem;">
-            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/></svg></span>
-            <span>Modern Languages</span>
           </div>
           <div style="display:flex;align-items:center;gap:1rem;">
             <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg></span>
             <span>Computer Science</span>
           </div>
           <div style="display:flex;align-items:center;gap:1rem;">
-            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;font-size:1.2rem;">...</span>
-            <span>And more...</span>
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">EPQ</text></svg></span>
+            <span>EPQ</span>
+          </div>
+        </div>
+        
+        <div style="margin-top:2.5rem;">
+          <h3 style="color:var(--accent-blue); font-size:1.2rem; margin-bottom:1rem;">IGCSE / GCSE</h3>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">GCSE</text></svg></span>
+              <span>Math</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M14 4v20M4 14h20"/></svg></span>
+              <span>Sciences</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/></svg></span>
+              <span>English</span>
+            </div>
           </div>
         </div>
       </section>
@@ -889,13 +897,235 @@
           </div>
         </div>
       </section>
+      
+      <section id="a-level-about">
+        <h2>About 777tutoring</h2>
+        <p>777tutoring is a premier tutoring agency, offering expert guidance for A Levels and beyond. Our tutors are subject specialists, passionate educators, and mentors who have excelled in their fields. We believe in nurturing curiosity, building confidence, and helping every student reach their academic potential.</p>
+      </section>
+
+      <section id="a-level-how">
+        <h2>How It Works</h2>
+        <div class="step-list">
+          <div class="step step-1">
+            <div class="step-circle">1</div>
+            <strong>Consultation</strong>
+            <p>Discuss your needs and goals with our team.</p>
+          </div>
+          <div class="step step-2">
+            <div class="step-circle">2</div>
+            <strong>Assessment</strong>
+            <p>We assess the student's strengths and areas for improvement.</p>
+          </div>
+          <div class="step step-3">
+            <div class="step-circle">3</div>
+            <strong>Tutor Matching</strong>
+            <p>We match you with the best-fit tutor for your A Level subject and level.</p>
+          </div>
+          <div class="step step-4">
+            <div class="step-circle">4</div>
+            <strong>Lessons</strong>
+            <p>Start personalised, highly efficient lessons at your preferred schedule.</p>
+          </div>
+          <div class="step step-5">
+            <div class="step-circle">5</div>
+            <strong>Progress Reports</strong>
+            <p>Receive regular updates and feedback after each session.</p>
+          </div>
+          <div class="step step-6">
+            <div class="step-circle">6</div>
+            <strong>WhatsApp Support</strong>
+            <p>Students have out-of-session access to tutors via WhatsApp for any queries or doubts.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="a-level-testimonials" style="margin-top:12rem;">
+        <h2>Testimonials & Frequently Asked Questions</h2>
+        <div class="testimonials-list">
+          <div class="testimonial">
+            <img src="student1.jpg" alt="Parent of A Level Student" class="testimonial-img" />
+            <div>
+              <strong>Parent of A Level Student</strong>
+              <p>"777tutoring helped my daughter gain confidence and excel in her A Level exams. The lessons were convenient and the teaching techniques were extremely effective!"</p>
+            </div>
+          </div>
+          <div class="testimonial">
+            <img src="student2.jpg" alt="A Level Student" class="testimonial-img" />
+            <div>
+              <strong>A Level Student</strong>
+              <p>"The personalised approach and efficient teaching made all the difference. I improved two grades in Maths!"</p>
+            </div>
+          </div>
+          <div class="testimonial">
+            <img src="student3.jpg" alt="Parent of GCSE Student" class="testimonial-img" />
+            <div>
+              <strong>Parent of GCSE Student</strong>
+              <p>"The regular feedback and engaging lessons kept my son motivated. Highly recommend!"</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-list" style="margin-top:2.5rem;">
+          <div class="faq-item">
+            <strong>Which curricula do you support?</strong>
+            <p>We specialise in A Levels and also support IB, IGCSE, PSLE, AP, GCSE, and more.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Can I switch tutors if needed?</strong>
+            <p>Yes, we offer flexibility to change tutors to ensure the best fit for your child.</p>
+          </div>
+          <div class="faq-item">
+            <strong>How do I track my child's progress?</strong>
+            <p>We provide detailed progress reports after each session, including feedback and homework assignments.</p>
+          </div>
+          <div class="faq-item">
+            <strong>What is your refund and cancellation policy?</strong>
+            <p>We have transparent policies to give you peace of mind. Please contact us for details.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Who We Are Section (hidden by default) -->
+  <div id="who-we-are-section" style="display:none;">
+    <section class="hero" style="margin-bottom:2.5rem;">
+      <div class="hero-text">
+        <h1>Who We Are</h1>
+        <p>Meet the passionate team behind 777tutoring. We are dedicated educators, subject specialists, and mentors committed to helping students achieve their academic potential.</p>
+      </div>
+      <div class="hero-img">
+        <img src="drawing tutor-1 see through.png" alt="777 Tutoring Team" />
+      </div>
+    </section>
+    <div class="container">
+      <section id="who-we-are-about">
+        <p>777tutoring is a premier tutoring agency founded by passionate educators who understand the challenges students face in today's competitive academic environment. Our mission is to provide expert guidance, personalized support, and proven strategies to help students excel in their studies and achieve their university goals.</p>
+      </section>
+
+      <section id="who-we-are-team">
+        <h2>Our Team</h2>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12l-10-5-10 5 10 5 10-5z"/><path d="M4 17.5V12"/><path d="M20 17.5V12"/></svg>
+            </div>
+            <h3>Expert Tutors</h3>
+            <p>Our tutors are graduates from top universities including Imperial College London, Durham University, and other prestigious institutions. All tutors have achieved top grades in their subjects and are passionate about teaching.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6"/><path d="M12 18v2"/><path d="M8 22h8"/></svg>
+            </div>
+            <h3>Subject Specialists</h3>
+            <p>Each tutor specializes in specific subjects and curricula, ensuring deep expertise and up-to-date knowledge of exam requirements, assessment criteria, and teaching methodologies.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M14 21v-2a4 4 0 014-4h0"/></svg>
+            </div>
+            <h3>Mentors & Guides</h3>
+            <p>Beyond academic tutoring, our team provides mentorship, university guidance, and personal development support to help students build confidence and achieve their full potential.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="who-we-are-mission">
+        <h2>Our Mission & Values</h2>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 000-7.8z"/></svg>
+            </div>
+            <h3>Excellence</h3>
+            <p>We are committed to academic excellence and helping every student reach their highest potential through personalized, effective teaching methods.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Dedication</h3>
+            <p>Our team is dedicated to providing consistent, reliable support and going above and beyond to ensure student success and satisfaction.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+            </div>
+            <h3>Transparency</h3>
+            <p>We believe in clear communication, honest feedback, and transparent policies to build trust with students and parents.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="who-we-are-universities">
+        <h2>Universities Our Tutors Attend</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;margin-top:2rem;">
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">Imperial College London</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">Durham University</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">University of Oxford</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">University of Cambridge</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">University College London</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">London School of Economics</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">Northwestern University</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">Cornell University</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">Rice University</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">University of Michigan</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">University of Melbourne</h3>
+          </div>
+          <div style="text-align:center;padding:1rem;background:var(--white);border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:1.2rem;margin:0;">University of Warwick</h3>
+          </div>
+        </div>
+      </section>
+
+      <section id="who-we-are-stats">
+        <h2>Our Impact</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:2rem;">
+          <div style="text-align:center;padding:1.5rem;background:var(--white);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:2.5rem;margin-bottom:0.5rem;">100+</h3>
+            <p style="color:var(--navy);font-weight:600;">Students Supported</p>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:var(--white);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:2.5rem;margin-bottom:0.5rem;">95%</h3>
+            <p style="color:var(--navy);font-weight:600;">Grade Improvement</p>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:var(--white);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:2.5rem;margin-bottom:0.5rem;">15+</h3>
+            <p style="color:var(--navy);font-weight:600;">Subjects Covered</p>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:var(--white);border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.1);">
+            <h3 style="color:var(--accent-blue);font-size:2.5rem;margin-bottom:0.5rem;">1000+</h3>
+            <p style="color:var(--navy);font-weight:600;">Hours Taught</p>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 
   <div class="container">
     <section id="about">
       <h2>About 777tutoring</h2>
-      <p>777tutoring is a premier IB-focused tutoring agency, offering expert guidance for the IB Diploma Programme and beyond. Our tutors are subject specialists, passionate educators, and mentors who have excelled in their fields. We believe in nurturing curiosity, building confidence, and helping every student reach their academic potential.</p>
+      <p>777tutoring is a premier online tutoring agency, offering expert guidance for the IB Diploma Programme and beyond. Our tutors are subject specialists, passionate educators, and mentors who have excelled in their fields. We believe in nurturing curiosity, building confidence, and helping every student reach their academic potential.</p>
     </section>
 
     <section id="features">
@@ -1054,23 +1284,6 @@
           </div>
         </div>
         <div style="margin-bottom:2rem;">
-          <h3 style="color:var(--accent-blue); font-size:1.2rem; margin-bottom:1rem;">IGCSE / GCSE</h3>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
-            <div style="display:flex;align-items:center;gap:1rem;">
-              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">GCSE</text></svg></span>
-              <span>Math</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:1rem;">
-              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M14 4v20M4 14h20"/></svg></span>
-              <span>Sciences</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:1rem;">
-              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg></span>
-              <span>English</span>
-            </div>
-          </div>
-        </div>
-        <div style="margin-bottom:2rem;">
           <h3 style="color:var(--accent-blue); font-size:1.2rem; margin-bottom:1rem;">IB Middle Years Programme (MYP)</h3>
           <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
             <div style="display:flex;align-items:center;gap:1rem;">
@@ -1154,25 +1367,7 @@
       </div>
     </section>
 
-    <section id="tutors">
-      <h2>Meet Our Tutors</h2>
-      <div class="tutors-list">
-        <div class="tutor-profile">
-          <img src="tutor1.jpg" alt="Avi Asthana" class="tutor-photo" />
-          <div>
-            <strong>Avi Asthana</strong><br>
-            Engineering Student at Imperial College London
-          </div>
-        </div>
-        <div class="tutor-profile">
-          <img src="tutor2.jpg" alt="Dinah Verma" class="tutor-photo" />
-          <div>
-            <strong>Dinah Verma</strong><br>
-            Durham University Law alumni
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <section id="testimonials">
       <h2>Testimonials & Frequently Asked Questions</h2>
@@ -1309,7 +1504,7 @@
             <tr>
               <td>Single Session (1 hour)</td>
               <td>£60</td>
-              <td>Flexible scheduling, any IB subject, highly efficient lesson</td>
+              <td>Flexible scheduling, any subject, highly efficient lesson</td>
             </tr>
             <tr>
               <td>Monthly (8 hours)</td>
@@ -1394,39 +1589,57 @@
       });
     }
 
-    // IB/A Level section toggle logic
+    // IB/A Level/Who We Are section toggle logic
     const ibLink = document.getElementById('ib-link');
     const aLevelLink = document.getElementById('a-level-link');
     const packagesLink = document.querySelector('a[href="#packages"]');
+    const whoWeAreLink = document.getElementById('who-we-are-link');
     const aLevelSection = document.getElementById('a-level-section');
     const packagesSection = document.getElementById('packages-section');
-    const mainContent = document.querySelectorAll('body > .hero, body > .container, body > section:not(#a-level-section):not(#packages-section), body > div:not(#a-level-section):not(#packages-section):not(.modal-overlay)');
+    const whoWeAreSection = document.getElementById('who-we-are-section');
+    const mainContent = document.querySelectorAll('body > .hero, body > .container, body > section:not(#a-level-section):not(#packages-section):not(#who-we-are-section), body > div:not(#a-level-section):not(#packages-section):not(#who-we-are-section):not(.modal-overlay)');
 
     function showIB() {
       if (aLevelSection) aLevelSection.style.display = 'none';
       if (packagesSection) packagesSection.style.display = 'none';
+      if (whoWeAreSection) whoWeAreSection.style.display = 'none';
       mainContent.forEach(el => { if (el) el.style.display = ''; });
       ibLink.classList.add('active');
       aLevelLink.classList.remove('active');
       if (packagesLink) packagesLink.classList.remove('active');
+      if (whoWeAreLink) whoWeAreLink.classList.remove('active');
     }
     function showALevel() {
       if (aLevelSection) aLevelSection.style.display = '';
       if (packagesSection) packagesSection.style.display = 'none';
+      if (whoWeAreSection) whoWeAreSection.style.display = 'none';
       mainContent.forEach(el => { if (el) el.style.display = 'none'; });
       aLevelLink.classList.add('active');
       ibLink.classList.remove('active');
       if (packagesLink) packagesLink.classList.remove('active');
+      if (whoWeAreLink) whoWeAreLink.classList.remove('active');
     }
     function showPackages() {
       if (aLevelSection) aLevelSection.style.display = 'none';
       if (packagesSection) packagesSection.style.display = '';
+      if (whoWeAreSection) whoWeAreSection.style.display = 'none';
       mainContent.forEach(el => { if (el) el.style.display = 'none'; });
       if (packagesLink) packagesLink.classList.add('active');
       ibLink.classList.remove('active');
       aLevelLink.classList.remove('active');
+      if (whoWeAreLink) whoWeAreLink.classList.remove('active');
     }
-    if (ibLink && aLevelLink && packagesLink) {
+    function showWhoWeAre() {
+      if (aLevelSection) aLevelSection.style.display = 'none';
+      if (packagesSection) packagesSection.style.display = 'none';
+      if (whoWeAreSection) whoWeAreSection.style.display = '';
+      mainContent.forEach(el => { if (el) el.style.display = 'none'; });
+      if (whoWeAreLink) whoWeAreLink.classList.add('active');
+      ibLink.classList.remove('active');
+      aLevelLink.classList.remove('active');
+      if (packagesLink) packagesLink.classList.remove('active');
+    }
+    if (ibLink && aLevelLink && packagesLink && whoWeAreLink) {
       ibLink.addEventListener('click', function(e) {
         e.preventDefault();
         showIB();
@@ -1439,9 +1652,29 @@
         e.preventDefault();
         showPackages();
       });
+      whoWeAreLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showWhoWeAre();
+      });
     }
     // Show IB by default
     showIB();
+    
+    // How It Works link functionality
+    const howLink = document.getElementById('how-link');
+    if (howLink) {
+      howLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showIB(); // Show IB section first
+        // Scroll to the how it works section after a short delay to ensure IB section is visible
+        setTimeout(() => {
+          const howSection = document.getElementById('how');
+          if (howSection) {
+            howSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      });
+    }
   </script>
 </body>
 </html> 
