@@ -647,6 +647,24 @@
         display: none !important;
       }
     }
+    /* Mobile image sizing and alignment */
+    @media (max-width: 900px) {
+      .hero-img img {
+        width: 220px !important;
+        max-width: 80vw !important;
+        margin: 0 auto !important;
+        display: block !important;
+      }
+      .hero-img {
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+      }
+      .feature-icon svg {
+        width: 22px !important;
+        height: 22px !important;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1814,6 +1832,57 @@
         document.getElementById('footer-contact-success').style.display = 'block';
       });
     }
+    // Mobile nav link logic
+    function setupMobileNavLinks() {
+      const mobileLinks = [
+        { id: 'ib-link-mobile', action: showIB },
+        { id: 'a-level-link-mobile', action: showALevel },
+        { id: 'who-we-are-link-mobile', action: showWhoWeAre },
+        { id: 'the-process-link-mobile', action: function() {
+            if (aLevelSection) aLevelSection.style.display = 'none';
+            if (packagesSection) packagesSection.style.display = 'none';
+            if (whoWeAreSection) whoWeAreSection.style.display = 'none';
+            mainContent.forEach(el => { if (el) el.style.display = 'none'; });
+            if (theProcessSection) theProcessSection.style.display = '';
+            document.body.classList.remove('a-level-active');
+            ibLink.classList.remove('active');
+            aLevelLink.classList.remove('active');
+            if (packagesLink) packagesLink.classList.remove('active');
+            if (whoWeAreLink) whoWeAreLink.classList.remove('active');
+            theProcessLink.classList.add('active');
+          }
+        },
+        { id: 'packages-link-mobile', action: showPackages },
+        { id: 'testimonials-link-mobile', action: function() {
+            showIB();
+            document.body.classList.remove('a-level-active');
+            setTimeout(function() {
+              var testimonialsSection = document.getElementById('testimonials');
+              if (testimonialsSection) {
+                testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 100);
+          }
+        },
+        { id: 'careers-link-mobile', action: function() {
+            if (careersLink) careersLink.click();
+          }
+        }
+      ];
+      mobileLinks.forEach(link => {
+        var el = document.getElementById(link.id);
+        if (el) {
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            link.action();
+            // Also close the mobile nav overlay
+            var mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+            if (mobileNavOverlay) mobileNavOverlay.style.display = 'none';
+          });
+        }
+      });
+    }
+    setupMobileNavLinks();
   </script>
 </body>
 </html> 
