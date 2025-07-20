@@ -1719,7 +1719,10 @@
           + 'Other Information: ' + other
         );
       window.location.href = mailto;
-      closeConsultationModal();
+      // Show receipt message and hide form
+      this.style.display = 'none';
+      document.getElementById('consultation-success').textContent = 'Thank you! Your request has been prepared in your email app.';
+      document.getElementById('consultation-success').style.display = 'block';
     });
     // How It Works link functionality
     const howLink = document.getElementById('how-link');
