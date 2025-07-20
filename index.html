@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>777tutoring | IB & A Level Tutoring</title>
+  <style>
+    :root {
+      --navy: #0a1020;
+      --light-blue: #eaf4fb;
+      --accent-blue: #000080;
+      --white: #fff;
+      --text: #1a2330;
+      --muted: #6b7a90;
+    }
+    html, body {
+      overflow-x: hidden;
+      box-sizing: border-box;
+    }
+    *, *::before, *::after {
+      box-sizing: inherit;
+    }
+    body {
+      font-family: 'Segoe UI', 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--light-blue);
+      color: var(--text);
+      line-height: 1.7;
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #e3eaf2;
+      padding: 0;
+    }
+    .header-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+      flex-wrap: nowrap;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .logo img {
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+      padding: 12px;
+    }
+    .logo span {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: nowrap;
+      height: 100%;
+      box-sizing: border-box;
+    }
+    nav a, .nav-dropdown {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      transition: color 0.2s;
+      font-size: 0.98rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 16px;
+    }
+    nav a:hover, nav a.active {
+      background: var(--accent-blue);
+      color: var(--white);
+    }
+    .hero {
+      background: var(--white);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      padding: 3.5rem 0.5rem 3rem 0.5rem;
+      max-width: 1100px;
+      margin: 2rem auto 2.5rem auto;
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 2px 16px #0001;
+    }
+    .hero-text {
+      flex: 1 1 340px;
+      min-width: 280px;
+    }
+    .hero-text h1 {
+      font-size: 2.1rem;
+      white-space: nowrap;
+      margin-bottom: 1.1rem;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-btn {
+      background: var(--accent-blue);
+      color: var(--white);
+      padding: 1rem 2.5rem;
+      border: none;
+      border-radius: 32px;
+      font-size: 1.15rem;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #4a90e220;
+      transition: background 0.2s, box-shadow 0.2s;
+    }
+    .cta-btn:hover {
+      background: var(--navy);
+      box-shadow: 0 4px 16px #18315322;
+    }
+    .hero-img {
+      flex: 1 1 320px;
+      min-width: 220px;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-img img {
+      width: 320px;
+      max-width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      box-shadow: 0 2px 16px #4a90e220;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem 0.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    section {
+      margin-bottom: 2.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    h2 {
+      color: var(--navy);
+      margin-bottom: 1.2rem;
+      font-size: 1.7rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
+    }
+    .feature {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.5rem 1.2rem;
+      flex: 1 1 260px;
+      min-width: 220px;
+      border: 1px solid #e3eaf2;
+      box-shadow: 0 2px 8px #0001;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .feature-icon {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--light-blue);
+      border-radius: 50%;
+      margin-bottom: 0.2rem;
+    }
+    .feature h3 {
+      color: var(--accent-blue);
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    .subjects-list, .tutors-list, .packages-list, .testimonials-list, .faq-list {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 1.5rem 1.2rem;
+      border: 1px solid #e3eaf2;
+      box-shadow: 0 2px 8px #0001;
+    }
+    .subjects-list ul {
+      padding-left: 1.2rem;
+      margin: 0.5rem 0 0.5rem 0;
+    }
+    .tutors-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: flex-start;
+    }
+    .tutor-profile {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.2rem;
+      background: var(--light-blue);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      min-width: 260px;
+      flex: 1 1 320px;
+      box-shadow: 0 2px 8px #4a90e220;
+    }
+    .tutor-photo {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #cce;
+      object-fit: cover;
+      border: 2px solid var(--accent-blue);
+      display: block;
+    }
+    .step-list {
+      position: relative;
+      width: 900px;
+      height: 650px;
+      margin: 0 auto;
+      display: block;
+      border-radius: 50%;
+      background: none;
+      max-width: 99vw;
+      max-height: 99vw;
+      margin-top: 6rem;
+    }
+    .step-list .step {
+      position: absolute;
+      width: 220px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--white);
+      border-radius: 18px;
+      box-shadow: 0 4px 16px #4a90e220;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1.2rem 1rem 1.1rem 1rem;
+      text-align: center;
+      border: none;
+      min-width: 180px;
+      max-width: 260px;
+      word-break: break-word;
+    }
+    .step-list .step-circle {
+      width: 44px;
+      height: 44px;
+      background: var(--accent-blue);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      box-shadow: 0 2px 8px #4a90e220;
+      border: 3px solid var(--white);
+      position: relative;
+      z-index: 2;
+    }
+    .step-list .step strong {
+      display: block;
+      font-size: 1.08rem;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .step-list .step p {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin: 0;
+    }
+    /* Position each step around the circle */
+    .step-list .step.step-1 { transform: translate(-50%, -50%) rotate(0deg) translate(0, -410px) rotate(0deg); }
+    .step-list .step.step-2 { transform: translate(-50%, -50%) rotate(60deg) translate(0, -410px) rotate(-60deg); }
+    .step-list .step.step-3 { transform: translate(-50%, -50%) rotate(120deg) translate(0, -410px) rotate(-120deg); }
+    .step-list .step.step-4 { transform: translate(-50%, -50%) rotate(180deg) translate(0, -410px) rotate(-180deg); }
+    .step-list .step.step-5 { transform: translate(-50%, -50%) rotate(240deg) translate(0, -410px) rotate(-240deg); }
+    .step-list .step.step-6 { transform: translate(-50%, -50%) rotate(300deg) translate(0, -410px) rotate(-300deg); }
+
+    /* Draw connecting circle */
+    .step-list::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 800px;
+      height: 570px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      border: 7px solid var(--accent-blue);
+      opacity: 0.18;
+      z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      .step-list {
+        width: 98vw;
+        height: 98vw;
+        min-width: 0;
+        min-height: 0;
+        max-width: 98vw;
+        max-height: 98vw;
+      }
+      .step-list::before {
+        width: 80vw;
+        height: 80vw;
+        min-width: 0;
+        min-height: 0;
+      }
+      .step-list .step {
+        width: 60vw;
+        min-width: 0;
+        max-width: 90vw;
+        padding: 0.7rem 0.2rem 0.7rem 0.2rem;
+      }
+      .step-list .step.step-1,
+      .step-list .step.step-2,
+      .step-list .step.step-3,
+      .step-list .step.step-4,
+      .step-list .step.step-5,
+      .step-list .step.step-6 {
+        transform: none !important;
+        position: static;
+        margin: 1.2rem auto;
+        display: block;
+      }
+      .step-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        min-height: 0;
+      }
+      .step-list::before {
+        display: none;
+      }
+      #how {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+      }
+    }
+    .packages-list {
+      overflow-x: auto;
+    }
+    .packages-list table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px #4a90e220;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+    .packages-list th, .packages-list td {
+      padding: 1.1rem 0.7rem;
+      text-align: center;
+      font-size: 1.01rem;
+      white-space: normal;
+      max-width: 180px;
+      overflow: visible;
+      text-overflow: unset;
+      word-break: break-word;
+    }
+    .packages-list th {
+      font-size: 1.09rem;
+      font-weight: 700;
+      background: var(--navy);
+      color: var(--white);
+      white-space: nowrap;
+      max-width: 180px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .packages-list tr:nth-child(even) td {
+      background: #f3f7fa;
+    }
+    .packages-list tr:first-child th:first-child {
+      border-top-left-radius: 16px;
+    }
+    .packages-list tr:first-child th:last-child {
+      border-top-right-radius: 16px;
+    }
+    .packages-list tr:last-child td:first-child {
+      border-bottom-left-radius: 16px;
+    }
+    .packages-list tr:last-child td:last-child {
+      border-bottom-right-radius: 16px;
+    }
+    @media (max-width: 700px) {
+      .packages-list table, .packages-list th, .packages-list td {
+        font-size: 0.95rem;
+      }
+      .packages-list th, .packages-list td {
+        padding: 0.7rem 0.4rem;
+      }
+    }
+    .testimonial {
+      margin-bottom: 1.2rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .testimonial-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #cce;
+      object-fit: cover;
+      border: 2px solid var(--accent-blue);
+      display: block;
+    }
+    .testimonial strong {
+      color: var(--accent-blue);
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-item strong {
+      color: var(--accent-blue);
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.7rem;
+      border: 1px solid #e3eaf2;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: var(--light-blue);
+      color: var(--text);
+    }
+    .contact-form button {
+      background: var(--accent-blue);
+      color: var(--white);
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      align-self: flex-start;
+    }
+    .contact-form button:hover {
+      background: var(--navy);
+    }
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 2rem 0 1rem 0;
+      margin-top: 3rem;
+    }
+    .footer-content {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 0 0.5rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .footer-social {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+    .footer-social a {
+      color: var(--white);
+      font-size: 1.5rem;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover {
+      color: var(--accent-blue);
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      font-size: 1rem;
+    }
+    .footer-links a {
+      color: var(--white);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover {
+      color: var(--accent-blue);
+    }
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2.5rem 1rem 2rem 1rem;
+      }
+      .header-content, .footer-content {
+        flex-direction: column;
+        gap: 1.2rem;
+        align-items: flex-start;
+      }
+      .tutors-list {
+        flex-direction: column;
+      }
+    }
+    .nav-dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-btn {
+      background: none;
+      color: var(--navy);
+      border: none;
+      font-size: 0.98rem;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 0.25rem 0.7rem 0.25rem 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3em;
+      transition: color 0.2s;
+    }
+    .dropdown-btn:hover, .nav-dropdown:hover > .dropdown-btn {
+      color: var(--accent-blue);
+    }
+    .dropdown-btn svg {
+      width: 1em;
+      height: 1em;
+      fill: currentColor;
+      margin-left: 0.2em;
+    }
+    .nav-dropdown .dropdown-content {
+      display: none;
+      position: absolute;
+      background: var(--white);
+      min-width: 150px;
+      box-shadow: 0 2px 8px #0001;
+      border-radius: 10px;
+      z-index: 10;
+      margin-top: 0.3rem;
+      right: 0;
+      padding: 0.3rem 0;
+    }
+    .nav-dropdown .dropdown-content a {
+      color: var(--navy);
+      padding: 0.6rem 1.1rem;
+      text-decoration: none;
+      display: block;
+      border-radius: 8px;
+      font-size: 0.98rem;
+      font-weight: 400;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-dropdown .dropdown-content a:hover {
+      background: var(--light-blue);
+      color: var(--accent-blue);
+    }
+    .nav-dropdown:hover .dropdown-content {
+      display: block;
+    }
+    /* Careers section */
+    #careers-section {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 16px #4a90e220;
+      padding: 2rem 1.5rem;
+      margin-bottom: 2.5rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #careers-section h2 {
+      color: var(--accent-blue);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    .careers-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+    .careers-form label {
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.3rem;
+    }
+    .careers-form input[type="text"],
+    .careers-form input[type="email"],
+    .careers-form textarea {
+      padding: 0.7rem;
+      border: 1px solid #e3eaf2;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: var(--light-blue);
+      color: var(--text);
+      width: 100%;
+      resize: vertical;
+    }
+    .careers-form input[type="file"] {
+      font-size: 1rem;
+      color: var(--navy);
+    }
+    .careers-form button {
+      background: var(--accent-blue);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem 2.2rem;
+      border-radius: 24px;
+      font-size: 1.08rem;
+      font-weight: 600;
+      cursor: pointer;
+      align-self: flex-start;
+      transition: background 0.2s;
+    }
+    .careers-form button:hover {
+      background: var(--navy);
+    }
+    /* Modal for Become a Tutor */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,16,32,0.55);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.2s;
+    }
+    .modal-overlay.active {
+      display: flex;
+    }
+    .modal-content {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 4px 32px #0a102055;
+      padding: 2rem 1.5rem;
+      max-width: 600px;
+      width: 95vw;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      animation: modalIn 0.2s;
+    }
+    @keyframes modalIn {
+      from { transform: translateY(40px) scale(0.98); opacity: 0; }
+      to { transform: none; opacity: 1; }
+    }
+    .modal-close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .modal-close:hover {
+      color: var(--accent-blue);
+    }
+    #how {
+      margin-top: 1.5rem;
+      margin-bottom: 14rem;
+    }
+    section#packages {
+      margin-bottom: 5rem;
+    }
+    #a-level-section {
+      background: #eafbf0;
+      --accent-blue: #145c28;
+    }
+    #a-level-section .hero,
+    #a-level-section .container {
+      background: #eafbf0;
+    }
+    #a-level-link.active {
+      background: #1b7f3a;
+      color: #fff !important;
+    }
+    #a-level-section .hero {
+      background: #fff !important;
+    }
+    #a-level-section, #a-level-section * {
+      --accent-blue: #145c28;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="tutoring logo.jpg" alt="777 Tutoring Logo" />
+      </div>
+      <nav>
+        <a href="#home" class="active" id="ib-link">IB Tutoring</a>
+        <a href="#a-level" id="a-level-link">A Level Tutoring</a>
+        <a href="#packages">Packages</a>
+        <a href="#how">How It Works</a>
+        <a href="#testimonials">Testimonials & FAQ</a>
+        <a href="#careers-section" id="careers-link">Careers</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1>Expert IB Diploma Programme Support</h1>
+      <p>The International Baccalaureate (IB) Diploma programme syllabus is challenging. Our tutors help you master the curriculum, excel in subject groups, and achieve your academic and university goals.</p>
+      <button class="cta-btn">Book a Free Consultation</button>
+    </div>
+    <div class="hero-img">
+      <img src="hero.jpg" alt="Tutoring Session" />
+    </div>
+  </section>
+
+  <!-- A Level Tutoring Section (hidden by default) -->
+  <div id="a-level-section" style="display:none;">
+    <section class="hero" style="margin-bottom:2.5rem;">
+      <div class="hero-text">
+        <h1>Expert A Level Tutoring</h1>
+        <p>Our A Level tutors are subject specialists with a proven track record of helping students achieve top grades. We offer tailored support for all major A Level subjects, exam boards, and university admissions tests.</p>
+        <button class="cta-btn">Book a Free A Level Consultation</button>
+      </div>
+      <div class="hero-img">
+        <img src="hero.jpg" alt="A Level Tutoring Session" />
+      </div>
+    </section>
+    <div class="container">
+      <section id="a-level-features">
+        <h2>Why Choose Us?</h2>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12l-10-5-10 5 10 5 10-5z"/><path d="M4 17.5V12"/><path d="M20 17.5V12"/></svg>
+            </div>
+            <h3>Specialist A Level Tutors</h3>
+            <p>Our tutors are experienced educators with strong academic backgrounds and proven track records, specialising in A Level subjects and exam boards.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6"/><path d="M12 18v2"/><path d="M8 22h8"/></svg>
+            </div>
+            <h3>Personalised Support</h3>
+            <p>We tailor every lesson to your needs, with progress tracking and regular feedback to help you reach your goals.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="8"/><rect x="9" y="8" width="4" height="12"/><rect x="15" y="4" width="4" height="16"/></svg>
+            </div>
+            <h3>University Admissions</h3>
+            <p>Expert guidance for personal statements, interviews, and admissions tests (MAT, STEP, BMAT, UCAT, etc.).</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 000-7.8z"/></svg>
+            </div>
+            <h3>Flexible & Supportive</h3>
+            <p>Choose your preferred times, online or in-person, with a supportive environment for every student.</p>
+          </div>
+        </div>
+      </section>
+      <section id="a-level-subjects">
+        <h2>A Level Subjects Offered</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1.5rem;">
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">M</text></svg></span>
+            <span>Mathematics</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">FM</text></svg></span>
+            <span>Further Mathematics</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M14 4v20M4 14h20"/></svg></span>
+            <span>Physics</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><circle cx="14" cy="14" r="4"/></svg></span>
+            <span>Chemistry</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><ellipse cx="14" cy="14" rx="10" ry="6"/><ellipse cx="14" cy="14" rx="4" ry="2"/></svg></span>
+            <span>Biology</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="5" y="15" width="4" height="7"/><rect x="12" y="10" width="4" height="12"/><rect x="19" y="6" width="4" height="16"/></svg></span>
+            <span>Economics</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg></span>
+            <span>English Literature</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5 12 2"/></svg></span>
+            <span>History</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/></svg></span>
+            <span>Geography</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/></svg></span>
+            <span>Modern Languages</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg></span>
+            <span>Computer Science</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:1rem;">
+            <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;font-size:1.2rem;">...</span>
+            <span>And more...</span>
+          </div>
+        </div>
+      </section>
+      <section id="a-level-admissions">
+        <h2>University Admissions Support</h2>
+        <div class="features">
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg>
+            </div>
+            <h3>Personal Statement & Essay Support</h3>
+            <p>Get expert help with your personal statement and university application essays.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+            <h3>Interview Preparation</h3>
+            <p>Practice and prepare for university interviews with our experienced tutors.</p>
+          </div>
+          <div class="feature">
+            <div class="feature-icon">
+              <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="8"/><rect x="9" y="8" width="4" height="12"/><rect x="15" y="4" width="4" height="16"/></svg></span>
+            </div>
+            <h3>Admissions Test Preparation</h3>
+            <p>Support for MAT, STEP, BMAT, UCAT, and other university admissions tests.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="container">
+    <section id="about">
+      <h2>About 777tutoring</h2>
+      <p>777tutoring is a premier IB-focused tutoring agency, offering expert guidance for the IB Diploma Programme and beyond. Our tutors are subject specialists, passionate educators, and mentors who have excelled in their fields. We believe in nurturing curiosity, building confidence, and helping every student reach their academic potential.</p>
+    </section>
+
+    <section id="features">
+      <h2>Why Choose Us?</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- Graduation Cap SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12l-10-5-10 5 10 5 10-5z"/><path d="M4 17.5V12"/><path d="M20 17.5V12"/></svg>
+          </div>
+          <h3>IB Specialist Tutors</h3>
+          <p>Our tutors are experienced educators with strong academic backgrounds and proven track records, specialising in the International Baccalaureate (IB) Diploma Programme (DP). All tutors have attained grade 7 in every DP subject they tutor.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- Lightbulb SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6"/><path d="M12 18v2"/><path d="M8 22h8"/></svg>
+          </div>
+          <h3>Efficient Teaching Techniques</h3>
+          <p>We use the latest, research-backed teaching methods and technology to ensure every lesson is highly effective and engaging, aligned with IB pedagogy and assessment criteria.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- User Group SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><circle cx="17" cy="7" r="4"/><path d="M2 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M14 21v-2a4 4 0 014-4h0"/></svg>
+          </div>
+          <h3>Full Mentorship</h3>
+          <p>Our tutors provide full mentorship, guiding you through every step of your IB Diploma Programme journey, including subject selection, Internal Assessment (IA), Extended Essay (EE), and Theory of Knowledge (TOK).</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- Book SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M4 4.5A2.5 2.5 0 016.5 7H20"/><path d="M20 22V2"/></svg>
+          </div>
+          <h3>Wide Subject Coverage</h3>
+          <p>Support for all IB Diploma Programme (DP) subject groups and levels, as well as IGCSE, A Levels, PSLE, AP, GCSE, MYP, and more.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- Clock SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3>Flexible Scheduling</h3>
+          <p>Choose your preferred times and the option to switch tutors, with all sessions designed for your convenience and to fit the IB DP schedule.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- Chart SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="12" width="4" height="8"/><rect x="9" y="8" width="4" height="12"/><rect x="15" y="4" width="4" height="16"/></svg></div>
+          <h3>Progress Tracking & Feedback</h3>
+          <p>Detailed reports after every session keep parents and students informed, with feedback aligned to IB assessment objectives and criteria.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- Heart SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 000-7.8z"/></svg>
+          </div>
+          <h3>Supportive Environment</h3>
+          <p>A safe space for questions, mistakes, and building confidence, fostering the IB learner profile attributes.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- File SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/></svg>
+          </div>
+          <h3>Transparent Policies</h3>
+          <p>Clear communication, refund, and cancellation policies for your peace of mind.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">
+            <!-- Star SVG -->
+            <svg width="24" height="24" fill="none" stroke="var(--accent-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15 8.5 22 9.3 17 14 18.2 21 12 17.8 5.8 21 7 14 2 9.3 9 8.5 12 2"/></svg>
+          </div>
+          <h3>Proven Results</h3>
+          <p>A track record of student success and glowing testimonials.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="subjects">
+      <h2>Subjects We Offer</h2>
+      <div class="subjects-list">
+        <div style="margin-bottom:2rem;">
+          <h3 style="color:var(--accent-blue); font-size:1.2rem; margin-bottom:1rem;">International Baccalaureate (IB) Diploma Programme (DP)</h3>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- Math AA Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">AA</text></svg></span>
+              <span>Math AA (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- Math AI Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">AI</text></svg></span>
+              <span>Math AI (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- Physics Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M14 4v20M4 14h20"/></svg></span>
+              <span>Physics (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- Chemistry Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><circle cx="14" cy="14" r="4"/></svg></span>
+              <span>Chemistry (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- Biology Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><ellipse cx="14" cy="14" rx="10" ry="6"/><ellipse cx="14" cy="14" rx="4" ry="2"/></svg></span>
+              <span>Biology (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- English Literature Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg></span>
+              <span>English Literature (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- English Lang & Lit Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/><circle cx="20" cy="8" r="2"/></svg></span>
+              <span>English Language & Literature (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- French Flag Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;font-size:1.7rem;">🇫🇷</span>
+              <span>French (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- Spanish Flag Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;font-size:1.7rem;">🇪🇸</span>
+              <span>Spanish B & Ab Initio (SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- Chinese Flag Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;font-size:1.7rem;">🇨🇳</span>
+              <span>Chinese (SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- Economics Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="5" y="15" width="4" height="7"/><rect x="12" y="10" width="4" height="12"/><rect x="19" y="6" width="4" height="16"/></svg></span>
+              <span>Economics (HL & SL)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- ToK Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M14 10v4l3 3"/></svg></span>
+              <span>Theory of Knowledge (ToK)</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- EE Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h8"/></svg></span>
+              <span>Extended Essay (EE) <span style="color:var(--muted);font-size:0.97em;">(English, Physics, Math, Economics)</span></span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <!-- CAS Icon -->
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M8 14h8"/><path d="M14 8v8"/></svg></span>
+              <span>CAS (Creativity, Activity, Service)</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-bottom:2rem;">
+          <h3 style="color:var(--accent-blue); font-size:1.2rem; margin-bottom:1rem;">IGCSE / GCSE</h3>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">GCSE</text></svg></span>
+              <span>Math</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M14 4v20M4 14h20"/></svg></span>
+              <span>Sciences</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg></span>
+              <span>English</span>
+            </div>
+          </div>
+        </div>
+        <div style="margin-bottom:2rem;">
+          <h3 style="color:var(--accent-blue); font-size:1.2rem; margin-bottom:1rem;">IB Middle Years Programme (MYP)</h3>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:1.5rem;">
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><text x="6" y="20" font-size="14" fill="var(--accent-blue)">MYP</text></svg></span>
+              <span>Math</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><circle cx="14" cy="14" r="10"/><path d="M14 4v20M4 14h20"/></svg></span>
+              <span>Sciences</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:1rem;">
+              <span style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--light-blue);border-radius:50%;"><svg width="28" height="28" fill="none" stroke="var(--accent-blue)" stroke-width="2"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg></span>
+              <span>English</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="advising" style="margin-top:5rem; margin-bottom:5rem;">
+      <h2 style="font-size:2.1rem; color:var(--navy); text-align:center; margin-bottom:1.2rem;">University Advising</h2>
+      <div class="advising-content" style="max-width:700px; margin:0 auto; background:var(--white); border-radius:18px; box-shadow:0 4px 24px #4a90e220; padding:2.5rem 2rem 2.2rem 2rem; text-align:center;">
+        <div style="display:flex;justify-content:center;gap:1.2rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+          <span title="UK" style="font-size:2rem;">🇬🇧</span>
+          <span title="Switzerland" style="font-size:2rem;">🇨🇭</span>
+          <span title="Spain" style="font-size:2rem;">🇪🇸</span>
+          <span title="Netherlands" style="font-size:2rem;">🇳🇱</span>
+          <span title="Italy" style="font-size:2rem;">🇮🇹</span>
+          <span title="USA" style="font-size:2rem;">🇺🇸</span>
+        </div>
+        <p style="font-size:1.18rem; color:var(--navy); font-weight:600; margin-bottom:2.2rem;">
+          <span style="font-size:1.25rem; color:var(--accent-blue); font-weight:700;">Our tutors have gained admission to the world's most prestigious universities</span> and bring their expertise to guide you through every step of the application process.
+        </p>
+        <p style="font-size:1.08rem; color:var(--muted); margin-bottom:1.2rem;">
+          Our university advising service offers <b>personalised guidance</b> for UK, US, EU, and international applications. We support students with:
+        </p>
+        <ul style="text-align:left; max-width:420px; margin:0 auto 0.5rem auto; color:var(--navy); font-size:1.04rem;">
+          <li>Personal statement and essay support <span style="color:var(--accent-blue);font-size:0.97em;">(Personal Statement Prep)</span></li>
+          <li>Interview preparation</li>
+          <li>Course and university selection</li>
+          <li>UCAS, Common App, and other application systems</li>
+          <li>Oxbridge, Ivy League, and top university admissions</li>
+        </ul>
+      </div>
+    </section>
+
+   
+    <section id="how">
+      <h2>How It Works</h2>
+      <div class="step-list">
+        <div class="step step-1">
+          <div class="step-circle">1</div>
+          <strong>Consultation</strong>
+          <p>Discuss your needs and goals with our team.</p>
+        </div>
+        <div class="step step-2">
+          <div class="step-circle">2</div>
+          <strong>Assessment</strong>
+          <p>We assess the student's strengths and areas for improvement.</p>
+        </div>
+        <div class="step step-3">
+          <div class="step-circle">3</div>
+          <strong>Tutor Matching</strong>
+          <p>We match you with the best-fit tutor for your IB subject and level.</p>
+        </div>
+        <div class="step step-4">
+          <div class="step-circle">4</div>
+          <strong>Lessons</strong>
+          <p>Start personalised, highly efficient lessons at your preferred schedule.</p>
+        </div>
+        <div class="step step-5">
+          <div class="step-circle">5</div>
+          <strong>Progress Reports</strong>
+          <p>Receive regular updates and feedback after each session.</p>
+        </div>
+        <div class="step step-6">
+          <div class="step-circle">6</div>
+          <strong>WhatsApp Support</strong>
+          <p>Students have out-of-session access to tutors via WhatsApp for any queries or doubts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="tutors">
+      <h2>Meet Our Tutors</h2>
+      <div class="tutors-list">
+        <div class="tutor-profile">
+          <img src="tutor1.jpg" alt="Avi Asthana" class="tutor-photo" />
+          <div>
+            <strong>Avi Asthana</strong><br>
+            Engineering Student at Imperial College London
+          </div>
+        </div>
+        <div class="tutor-profile">
+          <img src="tutor2.jpg" alt="Dinah Verma" class="tutor-photo" />
+          <div>
+            <strong>Dinah Verma</strong><br>
+            Durham University Law alumni
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials">
+      <h2>Testimonials & Frequently Asked Questions</h2>
+      <div class="testimonials-list">
+        <div class="testimonial">
+          <img src="student1.jpg" alt="Parent of IB Student" class="testimonial-img" />
+          <div>
+            <strong>Parent of IB Student</strong>
+            <p>"Elite Tutors helped my daughter gain confidence and excel in her IB exams. The lessons were convenient and the teaching techniques were extremely effective!"</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img src="student2.jpg" alt="IB Student" class="testimonial-img" />
+          <div>
+            <strong>IB Student</strong>
+            <p>"The personalised approach and efficient teaching made all the difference. I improved two grades in Maths!"</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img src="student3.jpg" alt="Parent of MYP Student" class="testimonial-img" />
+          <div>
+            <strong>Parent of MYP Student</strong>
+            <p>"The regular feedback and engaging lessons kept my son motivated. Highly recommend!"</p>
+          </div>
+        </div>
+      </div>
+      <div class="faq-list" style="margin-top:2.5rem;">
+        <div class="faq-item">
+          <strong>Which curricula do you support?</strong>
+          <p>We specialise in the International Baccalaureate (IB) and also support IGCSE, A Levels, PSLE, AP, GCSE, MYP, and more.</p>
+        </div>
+        <div class="faq-item">
+          <strong>Can I switch tutors if needed?</strong>
+          <p>Yes, we offer flexibility to change tutors to ensure the best fit for your child.</p>
+        </div>
+        <div class="faq-item">
+          <strong>How do I track my child's progress?</strong>
+          <p>We provide detailed progress reports after each session, including feedback and homework assignments.</p>
+        </div>
+        <div class="faq-item">
+          <strong>What is your refund and cancellation policy?</strong>
+          <p>We have transparent policies to give you peace of mind. Please contact us for details.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <img src="tutoring logo.jpg" alt="777 Tutoring Logo" style="display:block;margin:0 auto 1.2rem auto;height:60px;width:60px;border-radius:50%;background:#fff;object-fit:contain;padding:8px;" />
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <p>Email: admin@777tutoring.com | Whatsapp: +65 9386 0654</p>
+    </section>
+
+    <div class="modal-overlay" id="careers-modal">
+      <div class="modal-content">
+        <img src="tutoring logo.jpg" alt="777 Tutoring Logo" style="display:block;margin:0 auto 1.2rem auto;height:60px;width:60px;border-radius:50%;background:#fff;object-fit:contain;padding:8px;" />
+        <button class="modal-close" id="close-careers-modal" aria-label="Close">&times;</button>
+        <h2 style="color:var(--accent-blue);margin-bottom:1rem;font-size:1.5rem;text-align:center;">Become a Tutor at 777tutoring</h2>
+        <p style="text-align:center;max-width:500px;margin:0 auto 1.2rem auto;">We're always looking for passionate, high-achieving individuals to join our team. If you have excelled in the IB Diploma Programme and want to help students reach their full potential, apply below to become a tutor. All tutors must have achieved grade 7 in the subjects they wish to teach.</p>
+        <form class="careers-form" enctype="multipart/form-data">
+          <div>
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="about">About You</label>
+            <textarea id="about" name="about" rows="4" placeholder="Tell us about your IB experience, teaching philosophy, and why you'd be a great tutor." required></textarea>
+          </div>
+          <div>
+            <label for="resume">Upload Resume (PDF, DOCX)</label>
+            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+          </div>
+          <button type="submit">Submit Application</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Packages Section (hidden by default) -->
+  <div id="packages-section" style="display:none;">
+    <section class="hero" style="margin-bottom:2.5rem;">
+      <div class="hero-text">
+        <h1>Our Tutoring Packages</h1>
+        <p>Choose the perfect bundle for your needs. Flexible, affordable, and designed for results.</p>
+      </div>
+      <div class="hero-img">
+        <img src="tutoring logo.jpg" alt="Packages" />
+      </div>
+    </section>
+    <div class="container">
+      <section id="bundles-grid">
+        <h2>Bundles</h2>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;">
+          <div class="feature">
+            <h3>Single Session</h3>
+            <p>One hour of focused, 1-to-1 tutoring.</p>
+            <strong style="color:var(--accent-blue);font-size:1.2rem;">£60</strong>
+          </div>
+          <div class="feature">
+            <h3>5-Hour Bundle</h3>
+            <p>Five hours of tutoring at a discounted rate.</p>
+            <strong style="color:var(--accent-blue);font-size:1.2rem;">£285</strong>
+          </div>
+          <div class="feature">
+            <h3>10-Hour Bundle</h3>
+            <p>Ten hours, best for ongoing support.</p>
+            <strong style="color:var(--accent-blue);font-size:1.2rem;">£550</strong>
+          </div>
+          <div class="feature">
+            <h3>50-Hour Bundle</h3>
+            <p>Fifty hours for maximum progress and value.</p>
+            <strong style="color:var(--accent-blue);font-size:1.2rem;">£2600</strong>
+          </div>
+        </div>
+      </section>
+      <section id="packages-table" style="margin-top:3rem;">
+        <h2>All Packages</h2>
+        <div class="packages-list">
+          <table>
+            <tr>
+              <th>Package</th>
+              <th>Price</th>
+              <th>Details</th>
+            </tr>
+            <tr>
+              <td>Single Session (1 hour)</td>
+              <td>£60</td>
+              <td>Flexible scheduling, any IB subject, highly efficient lesson</td>
+            </tr>
+            <tr>
+              <td>Monthly (8 hours)</td>
+              <td>£450</td>
+              <td>Includes progress reports, all sessions online</td>
+            </tr>
+            <tr>
+              <td>IA Review</td>
+              <td>£60–£100</td>
+              <td>Comprehensive review and feedback for your IB Internal Assessment by experienced IB examiners and tutors</td>
+            </tr>
+            <tr>
+              <td>EE Review</td>
+              <td>£150–£200</td>
+              <td>Detailed Extended Essay review with actionable feedback to maximize your marks</td>
+            </tr>
+            <tr>
+              <td>University Advising (1 hour)</td>
+              <td>£65</td>
+              <td>Personalized university admissions guidance and application support</td>
+            </tr>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="logo"><img src="tutoring logo.jpg" alt="777 Tutoring Logo" /></div>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#packages">Packages</a>
+        <a href="#tutors">Tutors</a>
+        <a href="#how">How It Works</a>
+        <a href="#testimonials">Testimonials & FAQ</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" title="Facebook" aria-label="Facebook">
+          <!-- Facebook SVG -->
+          <svg width="24" height="24" fill="currentColor"><path d="M22 12c0-5.522-4.478-10-10-10S2 6.478 2 12c0 5 3.657 9.127 8.438 9.877v-6.987h-2.54v-2.89h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.242 0-1.632.771-1.632 1.562v1.875h2.773l-.443 2.89h-2.33v6.987C18.343 21.127 22 17 22 12z"/></svg>
+        </a>
+        <a href="#" title="Twitter" aria-label="Twitter">
+          <!-- Twitter SVG -->
+          <svg width="24" height="24" fill="currentColor"><path d="M22.46 6c-.77.35-1.6.59-2.47.7a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04A4.28 4.28 0 0016.11 4c-2.37 0-4.29 1.92-4.29 4.29 0 .34.04.67.11.99C7.69 8.99 4.07 7.13 1.64 4.15c-.37.64-.58 1.39-.58 2.19 0 1.51.77 2.84 1.95 3.62-.72-.02-1.4-.22-1.99-.55v.06c0 2.11 1.5 3.87 3.5 4.27-.36.1-.74.16-1.13.16-.28 0-.54-.03-.8-.08.54 1.68 2.12 2.9 3.99 2.93A8.6 8.6 0 012 19.54a12.13 12.13 0 006.56 1.92c7.88 0 12.2-6.53 12.2-12.2 0-.19-.01-.37-.02-.56A8.72 8.72 0 0024 4.59a8.5 8.5 0 01-2.54.7z"/></svg>
+        </a>
+        <a href="#" title="Instagram" aria-label="Instagram">
+          <!-- Instagram SVG -->
+          <svg width="24" height="24" fill="currentColor"><path d="M12 2.2c3.2 0 3.584.012 4.85.07 1.17.056 1.97.24 2.43.41.59.22 1.01.48 1.45.92.44.44.7.86.92 1.45.17.46.354 1.26.41 2.43.058 1.266.07 1.65.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.24 1.97-.41 2.43-.22.59-.48 1.01-.92 1.45-.44.44-.86.7-1.45.92-.46.17-1.26.354-2.43.41-1.266.058-1.65.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.24-2.43-.41-.59-.22-1.01-.48-1.45-.92-.44-.44-.7-.86-.92-1.45-.17-.46-.354-1.26-.41-2.43C2.212 15.784 2.2 15.4 2.2 12s.012-3.584.07-4.85c.056-1.17.24-1.97.41-2.43.22-.59.48-1.01.92-1.45.44-.44.86-.7 1.45-.92.46-.17 1.26-.354 2.43-.41C8.416.012 8.8 0 12 0z"/><circle cx="12" cy="12" r="3.6"/><circle cx="18.406" cy="5.594" r="1.44"/></svg>
+        </a>
+        <a href="#" title="LinkedIn" aria-label="LinkedIn">
+          <!-- LinkedIn SVG -->
+          <svg width="24" height="24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.327-.027-3.037-1.849-3.037-1.851 0-2.132 1.445-2.132 2.939v5.667H9.358V9h3.414v1.561h.049c.476-.899 1.637-1.849 3.37-1.849 3.602 0 4.267 2.369 4.267 5.455v6.285zM5.337 7.433c-1.144 0-2.07-.926-2.07-2.07 0-1.143.926-2.07 2.07-2.07 1.143 0 2.07.927 2.07 2.07 0 1.144-.927 2.07-2.07 2.07zm1.777 13.019H3.56V9h3.554v11.452z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:1.5rem; color:#b0b8c9; font-size:0.95rem;">&copy; 2024 777tutoring All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Careers modal popup logic
+    const careersLink = document.getElementById('careers-link');
+    const careersModal = document.getElementById('careers-modal');
+    const closeCareersModal = document.getElementById('close-careers-modal');
+    if (careersLink && careersModal && closeCareersModal) {
+      careersLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        careersModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+      closeCareersModal.addEventListener('click', function() {
+        careersModal.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+      careersModal.addEventListener('click', function(e) {
+        if (e.target === careersModal) {
+          careersModal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // IB/A Level section toggle logic
+    const ibLink = document.getElementById('ib-link');
+    const aLevelLink = document.getElementById('a-level-link');
+    const packagesLink = document.querySelector('a[href="#packages"]');
+    const aLevelSection = document.getElementById('a-level-section');
+    const packagesSection = document.getElementById('packages-section');
+    const mainContent = document.querySelectorAll('body > .hero, body > .container, body > section:not(#a-level-section):not(#packages-section), body > div:not(#a-level-section):not(#packages-section):not(.modal-overlay)');
+
+    function showIB() {
+      if (aLevelSection) aLevelSection.style.display = 'none';
+      if (packagesSection) packagesSection.style.display = 'none';
+      mainContent.forEach(el => { if (el) el.style.display = ''; });
+      ibLink.classList.add('active');
+      aLevelLink.classList.remove('active');
+      if (packagesLink) packagesLink.classList.remove('active');
+    }
+    function showALevel() {
+      if (aLevelSection) aLevelSection.style.display = '';
+      if (packagesSection) packagesSection.style.display = 'none';
+      mainContent.forEach(el => { if (el) el.style.display = 'none'; });
+      aLevelLink.classList.add('active');
+      ibLink.classList.remove('active');
+      if (packagesLink) packagesLink.classList.remove('active');
+    }
+    function showPackages() {
+      if (aLevelSection) aLevelSection.style.display = 'none';
+      if (packagesSection) packagesSection.style.display = '';
+      mainContent.forEach(el => { if (el) el.style.display = 'none'; });
+      if (packagesLink) packagesLink.classList.add('active');
+      ibLink.classList.remove('active');
+      aLevelLink.classList.remove('active');
+    }
+    if (ibLink && aLevelLink && packagesLink) {
+      ibLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showIB();
+      });
+      aLevelLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showALevel();
+      });
+      packagesLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showPackages();
+      });
+    }
+    // Show IB by default
+    showIB();
+  </script>
+</body>
+</html> 
