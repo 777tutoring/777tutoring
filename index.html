@@ -665,12 +665,50 @@
         height: 22px !important;
       }
     }
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column !important;
+        gap: 1.2rem !important;
+        padding: 1.5rem 0.5rem 1.2rem 0.5rem !important;
+        margin: 1rem auto 1.2rem auto !important;
+        min-width: 0 !important;
+        width: 98vw !important;
+        box-sizing: border-box !important;
+      }
+      .hero-text, .hero-img {
+        min-width: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+      }
+      .hero-text h1 {
+        white-space: normal !important;
+        font-size: 1.3rem !important;
+      }
+      .hero-text p {
+        font-size: 1rem !important;
+        margin-bottom: 1.2rem !important;
+      }
+      .step-list {
+        grid-template-columns: 1fr !important;
+        gap: 1.2rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+      }
+      .feature {
+        min-width: 0 !important;
+        max-width: 100% !important;
+        margin: 0 auto !important;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="header-content">
-      <div class="logo">
+      <div class="logo" id="header-logo" style="cursor:pointer;">
         <img src="see through logo.png" alt="777 Tutoring Logo" />
       </div>
       <nav class="desktop-nav">
@@ -1883,6 +1921,22 @@
       });
     }
     setupMobileNavLinks();
+
+    // Logo click returns to landing page (IB Tutoring)
+    const headerLogo = document.getElementById('header-logo');
+    if (headerLogo) {
+      headerLogo.addEventListener('click', function(e) {
+        e.preventDefault();
+        showIB();
+        document.body.classList.remove('a-level-active');
+        if (theProcessSection) theProcessSection.style.display = 'none';
+        // Scroll to top
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Close mobile nav if open
+        var mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        if (mobileNavOverlay) mobileNavOverlay.style.display = 'none';
+      });
+    }
   </script>
 </body>
 </html> 
