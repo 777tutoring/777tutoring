@@ -666,6 +666,57 @@
       }
     }
     @media (max-width: 900px) {
+      html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+      }
+      .container {
+        padding: 0 1rem !important;
+        box-sizing: border-box !important;
+        max-width: 100vw !important;
+      }
+      section, .step-list, .features, .packages-list {
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+      .feature, .feature * {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        word-break: break-word !important;
+      }
+      .footer-links {
+        flex-direction: column !important;
+        gap: 0.7rem !important;
+        align-items: flex-start !important;
+        font-size: 1.05rem !important;
+        padding: 0.5rem 0 !important;
+      }
+      .footer-links a {
+        padding: 0.3rem 0 !important;
+        width: 100%;
+        display: block;
+      }
+      .contact-form input, .contact-form textarea, .contact-form button {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        font-size: 1rem !important;
+      }
+      .contact-form {
+        gap: 0.7rem !important;
+      }
+      .packages-list > div, .packages-list > form {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .mobile-nav {
+        width: 90vw !important;
+        max-width: 350px !important;
+        padding: 2rem 1rem 1rem 1rem !important;
+      }
+    }
+    @media (max-width: 900px) {
       .hero {
         flex-direction: column !important;
         gap: 1.2rem !important;
@@ -1937,6 +1988,54 @@
         if (mobileNavOverlay) mobileNavOverlay.style.display = 'none';
       });
     }
+
+    // Footer nav link logic
+    function setupFooterNavLinks() {
+      const footerLinks = [
+        { selector: '.footer-links a[href="#home"]', action: showIB },
+        { selector: '.footer-links a[href="#a-level"]', action: showALevel },
+        { selector: '.footer-links a[href="#who-we-are"]', action: showWhoWeAre },
+        { selector: '.footer-links a[href="#the-process"]', action: function() {
+            if (aLevelSection) aLevelSection.style.display = 'none';
+            if (packagesSection) packagesSection.style.display = 'none';
+            if (whoWeAreSection) whoWeAreSection.style.display = 'none';
+            mainContent.forEach(el => { if (el) el.style.display = 'none'; });
+            if (theProcessSection) theProcessSection.style.display = '';
+            document.body.classList.remove('a-level-active');
+            ibLink.classList.remove('active');
+            aLevelLink.classList.remove('active');
+            if (packagesLink) packagesLink.classList.remove('active');
+            if (whoWeAreLink) whoWeAreLink.classList.remove('active');
+            theProcessLink.classList.add('active');
+          }
+        },
+        { selector: '.footer-links a[href="#packages"]', action: showPackages },
+        { selector: '.footer-links a[href="#testimonials"]', action: function() {
+            showIB();
+            document.body.classList.remove('a-level-active');
+            setTimeout(function() {
+              var testimonialsSection = document.getElementById('testimonials');
+              if (testimonialsSection) {
+                testimonialsSection.scrollIntoView({ behavior: 'smooth' });
+              }
+            }, 100);
+          }
+        },
+        { selector: '.footer-links a[href="#careers-section"]', action: function() {
+            if (careersLink) careersLink.click();
+          }
+        }
+      ];
+      footerLinks.forEach(link => {
+        document.querySelectorAll(link.selector).forEach(el => {
+          el.addEventListener('click', function(e) {
+            e.preventDefault();
+            link.action();
+          });
+        });
+      });
+    }
+    setupFooterNavLinks();
   </script>
 </body>
 </html> 
