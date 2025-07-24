@@ -1464,12 +1464,35 @@
     <section id="contact">
       <h2>Contact Us</h2>
       <img src="see through logo.png" alt="777 Tutoring Logo" style="display:block;margin:0 auto 1.2rem auto;height:60px;width:60px;border-radius:50%;background:#fff;object-fit:contain;padding:8px;" />
-      <form class="contact-form" id="footer-contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit">Send Message</button>
+      <form id="contact-form">
+        <input name="name" placeholder="Your Name" required>
+        <input name="email" type="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
       </form>
+
+      <script>
+        const form = document.getElementById('contact-form');
+
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+
+          const formData = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value
+          };
+
+          await fetch('https://script.google.com/macros/s/AKfycby9AmK0R3wANHM1KOch49i_Y0se1js5k4Y6oPnEr4p4VMnPRasHgGeDCD7MzQcrJzzX/exec', {
+            method: 'POST',
+            body: JSON.stringify(formData),
+            headers: { 'Content-Type': 'application/json' }
+          });
+
+          alert('Message sent!');
+          form.reset();
+        });
+      </script>
       <div id="footer-contact-success" style="display:none;color:var(--accent-blue);margin-top:1rem;text-align:center;font-weight:600;">Thank you! Your message has been prepared in your email app.</div>
       <p>Email: admin@777tutoring.com | Whatsapp: +65 9386 0654</p>
     </section>
