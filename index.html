@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -820,7 +821,7 @@
     <div class="hero-text" style="max-width:520px;margin:0 auto;background:#fff;border-radius:18px;box-shadow:0 4px 24px #4a90e220;padding:2.5rem 2rem 2.2rem 2rem;">
       <h1>Expert IB Programme Support</h1>
       <p>The International Baccalaureate (IB) Diploma programme syllabus is challenging. Our tutors help you master the curriculum, excel in subject groups, and achieve your academic and university goals.</p>
-      <button class="cta-btn">Book a Free Consultation</button>
+      <button class="cta-btn" onclick="window.open('https://forms.gle/3FzHu2dPNkeG9E7VA','_blank')">Book a Free Consultation</button>
     </div>
     <div class="hero-img">
       <img src="drawing tutor-2 see through.png" alt="Tutoring Session" />
@@ -833,7 +834,7 @@
       <div class="hero-text" style="max-width:520px;margin:0 auto;background:#fff;border-radius:18px;box-shadow:0 4px 24px #4a90e220;padding:2.5rem 2rem 2.2rem 2rem;">
         <h1>Expert A Level Support</h1>
         <p>Our A Level tutors are subject specialists with a proven track record of helping students achieve top grades. We offer tailored support for all major A Level subjects, exam boards, and university admissions tests.</p>
-        <button class="cta-btn">Book a Free Consultation</button>
+        <button class="cta-btn" onclick="window.open('https://forms.gle/3FzHu2dPNkeG9E7VA','_blank')">Book a Free Consultation</button>
       </div>
       <div class="hero-img">
         <img src="drawing tutor-2 see through.png" alt="A Level Tutoring Session" />
@@ -1018,28 +1019,34 @@
         </div>
       </section>
 
-      <section id="a-level-testimonials" style="margin-top:12rem;">
+      <section id="a-level-testimonials" style="margin-top:1rem;">
         <h2>Testimonials & Frequently Asked Questions</h2>
         <div class="testimonials-list">
           <div class="testimonial">
-            <img src="student1.jpg" alt="Parent of A Level Student" class="testimonial-img" />
-            <div>
+            <span class="testimonial-svg" style="display:inline-block;vertical-align:middle;margin-right:1rem;">
+              <svg width="48" height="48" fill="none" stroke="#4a90e2" stroke-width="2" viewBox="0 0 48 48"><circle cx="24" cy="16" r="10" fill="#eaf3fa"/><ellipse cx="24" cy="36" rx="16" ry="8" fill="#eaf3fa"/><circle cx="24" cy="16" r="10"/><ellipse cx="24" cy="36" rx="16" ry="8"/></svg>
+            </span>
+            <div style="display:inline-block;vertical-align:middle;max-width:calc(100% - 60px);">
               <strong>Parent of A Level Student</strong>
-              <p>"777tutoring helped my daughter gain confidence and excel in her A Level exams. The lessons were convenient and the teaching techniques were extremely effective!"</p>
+              <p>“The tutors at 777tutoring gave my son the attention he needed for his A Levels. We’re grateful for their dedication and professionalism.”</p>
             </div>
           </div>
           <div class="testimonial">
-            <img src="student2.jpg" alt="A Level Student" class="testimonial-img" />
-            <div>
+            <span class="testimonial-svg" style="display:inline-block;vertical-align:middle;margin-right:1rem;">
+              <svg width="48" height="48" fill="none" stroke="#4a90e2" stroke-width="2" viewBox="0 0 48 48"><circle cx="24" cy="16" r="10" fill="#eaf3fa"/><ellipse cx="24" cy="36" rx="16" ry="8" fill="#eaf3fa"/><circle cx="24" cy="16" r="10"/><ellipse cx="24" cy="36" rx="16" ry="8"/></svg>
+            </span>
+            <div style="display:inline-block;vertical-align:middle;max-width:calc(100% - 60px);">
               <strong>A Level Student</strong>
-              <p>"The personalised approach and efficient teaching made all the difference. I improved two grades in Maths!"</p>
+              <p>"My tutor always explained things clearly, planned for my needs and never made me feel silly for asking questions. I actually started enjoying my studies and improved four grades!"</p>
             </div>
           </div>
           <div class="testimonial">
-            <img src="student3.jpg" alt="Parent of GCSE Student" class="testimonial-img" />
-            <div>
+            <span class="testimonial-svg" style="display:inline-block;vertical-align:middle;margin-right:1rem;">
+              <svg width="48" height="48" fill="none" stroke="#4a90e2" stroke-width="2" viewBox="0 0 48 48"><circle cx="24" cy="16" r="10" fill="#eaf3fa"/><ellipse cx="24" cy="36" rx="16" ry="8" fill="#eaf3fa"/><circle cx="24" cy="16" r="10"/><ellipse cx="24" cy="36" rx="16" ry="8"/></svg>
+            </span>
+            <div style="display:inline-block;vertical-align:middle;max-width:calc(100% - 60px);">
               <strong>Parent of GCSE Student</strong>
-              <p>"The regular feedback and engaging lessons kept my son motivated. Highly recommend!"</p>
+              <p>“Thanks to 777tutoring, our child felt supported every step of the way. Her confidence soared, and so did her GCSE results. Highly recommend!"</p>
             </div>
           </div>
         </div>
@@ -1419,7 +1426,7 @@
           </span>
           <div style="display:inline-block;vertical-align:middle;max-width:calc(100% - 60px);">
             <strong>Parent of IB Student</strong>
-            <p>"Elite Tutors helped my daughter gain confidence and excel in her IB exams. The lessons were convenient and the teaching techniques were extremely effective!"</p>
+            <p>"777tutoring helped my daughter gain confidence and excel in her IB exams. The lessons were convenient and the teaching techniques were extremely effective!"</p>
           </div>
         </div>
         <div class="testimonial">
@@ -1681,23 +1688,6 @@
     <div style="text-align:center; margin-top:1.5rem; color:#b0b8c9; font-size:0.95rem;">&copy; 2024 777tutoring All rights reserved.</div>
   </footer>
 
-  <!-- Consultation Modal -->
-  <div class="modal-overlay" id="consultation-modal">
-    <div class="modal-content">
-      <button class="modal-close" id="close-consultation-modal" aria-label="Close">&times;</button>
-      <h2 style="color:var(--accent-blue);margin-bottom:1rem;font-size:1.5rem;text-align:center;">Book a Free Consultation</h2>
-      <form id="consultation-form" action="https://formspree.io/f/mwkgyyqg" method="POST" style="display:flex;flex-direction:column;gap:1rem;max-width:400px;margin:0 auto;">
-        <input type="text" name="name" placeholder="Your Name" required style="padding:0.7rem;border:1px solid #e3eaf2;border-radius:6px;font-size:1rem;background:var(--light-blue);color:var(--text);">
-        <input type="text" name="grade" placeholder="Your Grade/Year" required style="padding:0.7rem;border:1px solid #e3eaf2;border-radius:6px;font-size:1rem;background:var(--light-blue);color:var(--text);">
-        <input type="email" name="email" placeholder="Your Email" required style="padding:0.7rem;border:1px solid #e3eaf2;border-radius:6px;font-size:1rem;background:var(--light-blue);color:var(--text);">
-        <input type="text" name="subject" placeholder="Subject(s) You Need Help With" required style="padding:0.7rem;border:1px solid #e3eaf2;border-radius:6px;font-size:1rem;background:var(--light-blue);color:var(--text);">
-        <textarea name="other" placeholder="Other Information (goals, preferred times, etc.)" rows="4" style="padding:0.7rem;border:1px solid #e3eaf2;border-radius:6px;font-size:1rem;background:var(--light-blue);color:var(--text);"></textarea>
-        <button type="submit" style="background:var(--accent-blue);color:#fff;border:none;padding:0.8rem 2rem;border-radius:24px;font-size:1rem;font-weight:600;cursor:pointer;transition:background 0.2s;align-self:flex-start;">Send</button>
-      </form>
-      <div id="consultation-success" style="display:none;color:var(--accent-blue);margin-top:1rem;text-align:center;font-weight:600;">Thank you! Your request has been sent.</div>
-    </div>
-  </div>
-
   <script>
     // Careers modal popup logic
     const careersLink = document.getElementById('careers-link');
@@ -1843,48 +1833,6 @@
     showIB();
     document.body.classList.remove('a-level-active');
     
-    // Consultation Modal logic
-    function showConsultationModal() {
-      document.getElementById('consultation-modal').style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-    }
-    function closeConsultationModal() {
-      document.getElementById('consultation-modal').style.display = 'none';
-      document.body.style.overflow = '';
-    }
-    document.querySelectorAll('.cta-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        showConsultationModal();
-      });
-    });
-    document.getElementById('close-consultation-modal').addEventListener('click', closeConsultationModal);
-    document.getElementById('consultation-modal').addEventListener('click', function(e) {
-      if (e.target === this) closeConsultationModal();
-    });
-    // Show success message on submit
-    document.getElementById('consultation-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = this.elements['name'].value;
-      var grade = this.elements['grade'].value;
-      var email = this.elements['email'].value;
-      var subject = this.elements['subject'].value;
-      var other = this.elements['other'].value;
-      var mailto = 'mailto:admin@777tutoring.com'
-        + '?subject=' + encodeURIComponent('Free Consultation Request from ' + name)
-        + '&body=' + encodeURIComponent(
-            'Name: ' + name + '\n'
-          + 'Grade/Year: ' + grade + '\n'
-          + 'Email: ' + email + '\n'
-          + 'Subject(s): ' + subject + '\n'
-          + 'Other Information: ' + other
-        );
-      window.location.href = mailto;
-      // Show receipt message and hide form
-      this.style.display = 'none';
-      document.getElementById('consultation-success').textContent = 'Thank you! Your request has been prepared in your email app.';
-      document.getElementById('consultation-success').style.display = 'block';
-    });
     // How It Works link functionality
     const howLink = document.getElementById('how-link');
     if (howLink) {
