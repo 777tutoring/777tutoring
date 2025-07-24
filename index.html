@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>777tutoring | IB & A Level Tutoring</title>
+  <link rel="icon" type="image/png" href="see through logo.png" />
   <style>
     :root {
       --navy: #0a1020;
@@ -29,11 +30,18 @@
       line-height: 1.7;
       max-width: 100vw;
       overflow-x: hidden;
+      padding-top: 120px !important;
     }
     header {
       background: var(--white);
       border-bottom: 1px solid #e3eaf2;
       padding: 0;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      z-index: 100;
+      box-shadow: 0 2px 8px #0001;
     }
     .header-content {
       max-width: 1100px;
@@ -1472,25 +1480,22 @@
         <button class="modal-close" id="close-careers-modal" aria-label="Close">&times;</button>
         <h2 style="color:var(--accent-blue);margin-bottom:1rem;font-size:1.5rem;text-align:center;">Become a Tutor at 777tutoring</h2>
         <p style="text-align:center;max-width:500px;margin:0 auto 1.2rem auto;">We're always looking for passionate, high-achieving individuals to join our team. If you have excelled in the IB Diploma Programme and want to help students reach their full potential, apply below to become a tutor. All tutors must have achieved grade 7 in the subjects they wish to teach.</p>
-        <form class="careers-form" enctype="multipart/form-data">
+        <form class="careers-form" id="careers-form">
           <div>
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" required />
+            <label for="careers-name">Full Name</label>
+            <input type="text" id="careers-name" name="name" required />
           </div>
           <div>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
+            <label for="careers-email">Email</label>
+            <input type="email" id="careers-email" name="email" required />
           </div>
           <div>
-            <label for="about">About You</label>
-            <textarea id="about" name="about" rows="4" placeholder="Tell us about your IB experience, teaching philosophy, and why you'd be a great tutor." required></textarea>
+            <label for="careers-about">About You</label>
+            <textarea id="careers-about" name="about" rows="4" placeholder="Tell us about your IB experience, teaching philosophy, and why you'd be a great tutor." required></textarea>
           </div>
-          <div>
-            <label for="resume">Upload Resume (PDF, DOCX)</label>
-            <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
-          </div>
-          <button type="submit">Submit Application</button>
+          <button type="submit">Send</button>
         </form>
+        <div id="careers-success" style="display:none;color:var(--accent-blue);margin-top:1rem;text-align:center;font-weight:600;">Thank you! Your application has been prepared in your email app.</div>
       </div>
     </div>
   </div>
@@ -1831,7 +1836,7 @@
       });
       careersLinkHeader.addEventListener('click', function(e) {
         e.preventDefault();
-        if (careersLink) careersLink.click(); // Open the modal from anywhere
+        openCareersModal();
       });
     }
     // Ensure correct background on page load
@@ -1968,10 +1973,7 @@
             }, 100);
           }
         },
-        { id: 'careers-link-mobile', action: function() {
-            if (careersLink) careersLink.click();
-          }
-        }
+        { id: 'careers-link-mobile', action: openCareersModal }
       ];
       mobileLinks.forEach(link => {
         var el = document.getElementById(link.id);
@@ -2005,6 +2007,13 @@
     }
 
     // Footer nav link logic
+    function openCareersModal() {
+      const careersModal = document.getElementById('careers-modal');
+      if (careersModal) {
+        careersModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
     function setupFooterNavLinks() {
       const footerLinks = [
         { selector: '.footer-links a[href="#home"]', action: showIB },
@@ -2036,10 +2045,7 @@
             }, 100);
           }
         },
-        { selector: '.footer-links a[href="#careers-section"]', action: function() {
-            if (careersLink) careersLink.click();
-          }
-        }
+        { selector: '.footer-links a[href="#careers-section"]', action: openCareersModal }
       ];
       footerLinks.forEach(link => {
         document.querySelectorAll(link.selector).forEach(el => {
@@ -2051,6 +2057,46 @@
       });
     }
     setupFooterNavLinks();
+
+    // Ensure all 'Careers' links always open the modal
+    function openCareersModal() {
+      const careersModal = document.getElementById('careers-modal');
+      if (careersModal) {
+        careersModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    // Attach to all anchors with href='#careers-section'
+    document.querySelectorAll('a[href="#careers-section"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        openCareersModal();
+        // Close mobile nav if open
+        var mobileNavOverlay = document.getElementById('mobile-nav-overlay');
+        if (mobileNavOverlay) mobileNavOverlay.style.display = 'none';
+      });
+    });
+
+    // Careers form mailto logic
+    const careersForm = document.getElementById('careers-form');
+    if (careersForm) {
+      careersForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = this.elements['name'].value;
+        var email = this.elements['email'].value;
+        var about = this.elements['about'].value;
+        var mailto = 'mailto:admin@777tutoring.com'
+          + '?subject=' + encodeURIComponent('Careers Application from ' + name)
+          + '&body=' + encodeURIComponent(
+              'Name: ' + name + '\n'
+            + 'Email: ' + email + '\n'
+            + 'About: ' + about
+          );
+        window.location.href = mailto;
+        this.style.display = 'none';
+        document.getElementById('careers-success').style.display = 'block';
+      });
+    }
   </script>
 </body>
 </html> 
