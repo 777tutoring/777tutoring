@@ -2576,6 +2576,7 @@
       if (whoWeAreLink) whoWeAreLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
       if (careersLink) careersLink.classList.remove('active');
+      updateMobileNavActiveState('ib');
     }
     function showALevel() {
       if (aLevelSection) aLevelSection.style.display = '';
@@ -2590,6 +2591,7 @@
       if (whoWeAreLink) whoWeAreLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
       if (careersLink) careersLink.classList.remove('active');
+      updateMobileNavActiveState('a-level');
     }
     function showPackages() {
       if (aLevelSection) aLevelSection.style.display = 'none';
@@ -2604,6 +2606,7 @@
       if (whoWeAreLink) whoWeAreLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
       if (careersLink) careersLink.classList.remove('active');
+      updateMobileNavActiveState('packages');
     }
     function showWhoWeAre() {
       if (aLevelSection) aLevelSection.style.display = 'none';
@@ -2618,6 +2621,7 @@
       if (packagesLink) packagesLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
       if (careersLink) careersLink.classList.remove('active');
+      updateMobileNavActiveState('who-we-are');
     }
     
     function showCareers() {
@@ -2633,6 +2637,7 @@
       if (packagesLink) packagesLink.classList.remove('active');
       if (whoWeAreLink) whoWeAreLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
+      updateMobileNavActiveState('careers');
     }
     
     if (ibLink && aLevelLink && packagesLink && whoWeAreLink && theProcessLink && testimonialsLink && careersLink) {
@@ -2675,6 +2680,7 @@
         if (whoWeAreLink) whoWeAreLink.classList.remove('active');
         if (careersLink) careersLink.classList.remove('active');
         theProcessLink.classList.add('active');
+        updateMobileNavActiveState('the-process');
       });
       testimonialsLink.addEventListener('click', function(e) {
         e.preventDefault();
@@ -2687,6 +2693,7 @@
             testimonialsSection.scrollIntoView({ behavior: 'smooth' });
           }
         }, 100);
+        updateMobileNavActiveState('ib');
       });
       careersLink.addEventListener('click', function(e) {
         e.preventDefault();
@@ -2757,9 +2764,9 @@
     // Mobile nav link logic
     function setupMobileNavLinks() {
       const mobileLinks = [
-        { id: 'ib-link-mobile', action: showIB },
-        { id: 'a-level-link-mobile', action: showALevel },
-        { id: 'who-we-are-link-mobile', action: showWhoWeAre },
+        { id: 'ib-link-mobile', action: showIB, section: 'ib' },
+        { id: 'a-level-link-mobile', action: showALevel, section: 'a-level' },
+        { id: 'who-we-are-link-mobile', action: showWhoWeAre, section: 'who-we-are' },
         { id: 'the-process-link-mobile', action: function() {
             if (aLevelSection) aLevelSection.style.display = 'none';
             if (packagesSection) packagesSection.style.display = 'none';
@@ -2774,9 +2781,9 @@
             if (whoWeAreLink) whoWeAreLink.classList.remove('active');
             if (careersLink) careersLink.classList.remove('active');
             theProcessLink.classList.add('active');
-          }
-        },
-        { id: 'packages-link-mobile', action: showPackages },
+            updateMobileNavActiveState('the-process');
+          }, section: 'the-process' },
+        { id: 'packages-link-mobile', action: showPackages, section: 'packages' },
         { id: 'testimonials-link-mobile', action: function() {
             showIB();
             document.body.classList.remove('a-level-active');
@@ -2786,9 +2793,9 @@
                 testimonialsSection.scrollIntoView({ behavior: 'smooth' });
               }
             }, 100);
-          }
-        },
-        { id: 'careers-link-mobile', action: showCareers }
+            updateMobileNavActiveState('ib');
+          }, section: 'ib' },
+        { id: 'careers-link-mobile', action: showCareers, section: 'careers' }
       ];
       mobileLinks.forEach(link => {
         var el = document.getElementById(link.id);
@@ -2796,12 +2803,43 @@
           el.addEventListener('click', function(e) {
             e.preventDefault();
             link.action();
+            // Update mobile nav active state
+            updateMobileNavActiveState(link.section);
             // Also close the mobile nav overlay
             var mobileNavOverlay = document.getElementById('mobile-nav-overlay');
             if (mobileNavOverlay) mobileNavOverlay.style.display = 'none';
           });
         }
       });
+    }
+    
+    // Function to update mobile navigation active states
+    function updateMobileNavActiveState(activeSection) {
+      // Remove active class from all mobile nav links
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      mobileNavLinks.forEach(link => link.classList.remove('active'));
+      
+      // Add active class to the current section's mobile nav link
+      switch(activeSection) {
+        case 'ib':
+          document.getElementById('ib-link-mobile').classList.add('active');
+          break;
+        case 'a-level':
+          document.getElementById('a-level-link-mobile').classList.add('active');
+          break;
+        case 'who-we-are':
+          document.getElementById('who-we-are-link-mobile').classList.add('active');
+          break;
+        case 'the-process':
+          document.getElementById('the-process-link-mobile').classList.add('active');
+          break;
+        case 'packages':
+          document.getElementById('packages-link-mobile').classList.add('active');
+          break;
+        case 'careers':
+          document.getElementById('careers-link-mobile').classList.add('active');
+          break;
+      }
     }
     setupMobileNavLinks();
 
