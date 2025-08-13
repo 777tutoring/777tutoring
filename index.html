@@ -80,10 +80,11 @@
 
     .logo img {
       height: 50px;
-      width: 50px;
-      border-radius: 50%;
+      width: auto;
+      border-radius: var(--border-radius);
       background: var(--white);
-      padding: 6px;
+      padding: 8px;
+      object-fit: contain;
     }
 
     .logo span {
@@ -671,6 +672,117 @@
       background: var(--gray);
       color: var(--primary);
     }
+    
+
+
+    
+    /* Careers Section Styling */
+    .careers-logo {
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    
+    .careers-logo img {
+      height: 60px;
+      width: auto;
+      border-radius: var(--border-radius);
+      background: var(--white);
+      padding: 8px;
+      object-fit: contain;
+    }
+    
+    .careers-form {
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .form-group label {
+      font-weight: 600;
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+      padding: 0.875rem;
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      transition: all 0.2s;
+      background: var(--white);
+      font-family: inherit;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.1);
+    }
+    
+    .careers-submit-btn {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: var(--border-radius);
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    
+    .careers-submit-btn:hover {
+      background: var(--accent-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(49, 130, 206, 0.3);
+    }
+    
+    .careers-submit-btn svg {
+      width: 20px;
+      height: 20px;
+      color: var(--white);
+    }
+    
+    .careers-success {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      color: var(--success);
+    }
+    
+    .careers-success svg {
+      color: var(--success);
+      margin-bottom: 1rem;
+    }
+    
+    .careers-success h3 {
+      color: var(--success);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .careers-success p {
+      color: var(--text-light);
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 0;
+    }
 
     /* Footer */
     footer {
@@ -786,11 +898,11 @@
       }
 
       .desktop-nav {
-        display: none;
+      display: none;
       }
 
       .hamburger {
-        display: block;
+      display: block;
       }
 
       .hero {
@@ -854,7 +966,7 @@
 
       .footer-content {
         grid-template-columns: 1fr;
-        text-align: center;
+      text-align: center;
         gap: 1rem;
       }
 
@@ -880,7 +992,7 @@
       .cta-btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.95rem;
-        width: 100%;
+      width: 100%;
       }
 
       .feature {
@@ -1112,6 +1224,66 @@
       transform: translateY(-1px);
     }
     
+    /* Package Cards Styling */
+    .packages-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .package-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .package-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .package-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .package-header h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 0;
+    }
+    
+    .package-price {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    
+    .package-duration {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.75rem;
+      font-weight: 500;
+    }
+    
+    .package-description {
+      color: var(--text-light);
+      line-height: 1.5;
+      margin: 0;
+      flex-grow: 1;
+    }
+    
     /* Contact Section Styling */
     .contact-content {
       text-align: center;
@@ -1296,6 +1468,15 @@
         .contact-content > p {
           font-size: 1rem;
         }
+        
+        .packages-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        
+        .package-card {
+          padding: 1.25rem;
+        }
       }
   </style>
 </head>
@@ -1312,7 +1493,7 @@
         <a href="#the-process" id="the-process-link">The Process</a>
         <a href="#packages">Packages</a>
         <a href="#testimonials">Testimonials & FAQ</a>
-        <a href="#careers-section" id="careers-link">Careers</a>
+        <a href="#careers" id="careers-link">Careers</a>
       </nav>
       <button class="hamburger" id="hamburger-btn" aria-label="Open menu">
         <span></span>
@@ -1329,7 +1510,7 @@
         <a href="#the-process" id="the-process-link-mobile">The Process</a>
         <a href="#packages" id="packages-link-mobile">Packages</a>
         <a href="#testimonials" id="testimonials-link-mobile">Testimonials & FAQ</a>
-        <a href="#careers-section" id="careers-link-mobile">Careers</a>
+        <a href="#careers" id="careers-link-mobile">Careers</a>
       </nav>
     </div>
   </header>
@@ -1525,7 +1706,7 @@
             <h3>Global Applications</h3>
             <p>UK, US, EU, and international university guidance.</p>
           </div>
-        </div>
+            </div>
         
         <div class="unified-advising-content">
           <div class="country-flags">
@@ -1554,7 +1735,7 @@
             <div class="testimonial-content">
               <h4>Parent of A Level Student</h4>
               <p>"The tutors at 777tutoring gave my son the attention he needed for his A Levels. We're grateful for their dedication and professionalism."</p>
-            </div>
+          </div>
           </div>
           
           <div class="testimonial-card">
@@ -1574,8 +1755,8 @@
             <div class="testimonial-content">
               <h4>Parent of GCSE Student</h4>
               <p>"Thanks to 777tutoring, our child felt supported every step of the way. Her confidence soared, and so did her GCSE results."</p>
-            </div>
           </div>
+        </div>
         </div>
       </section>
 
@@ -1957,7 +2138,7 @@
         <div class="admissions-feature">
           <div class="feature-icon">
             <svg width="24" height="24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="16" height="16" rx="2"/><path d="M10 10h8M10 14h8M10 18h4"/></svg>
-          </div>
+        </div>
           <h3>Personal Statement & Essays</h3>
           <p>Expert guidance for compelling personal statements and application essays.</p>
         </div>
@@ -1999,7 +2180,7 @@
           <p class="advising-highlight">
             <span class="highlight-text">Our tutors have gained admission to the world's most prestigious universities</span> and bring their expertise to guide you through every step of the application process.
           </p>
-        </div>
+      </div>
     </section>
 
 
@@ -2093,30 +2274,8 @@
       </div>
     </section>
 
-    <div class="modal-overlay" id="careers-modal">
-      <div class="modal-content">
-        <img src="see through logo.png" alt="777 Tutoring Logo" style="display:block;margin:0 auto 1.2rem auto;height:60px;width:60px;border-radius:50%;background:#fff;object-fit:contain;padding:8px;" />
-        <button class="modal-close" id="close-careers-modal" aria-label="Close">&times;</button>
-        <h2 style="color:var(--accent-blue);margin-bottom:1rem;font-size:1.5rem;text-align:center;">Become a Tutor at 777tutoring</h2>
-        <p style="text-align:center;max-width:500px;margin:0 auto 1.2rem auto;">We're always looking for passionate, high-achieving individuals to join our team. If you have excelled in the IB Diploma Programme and want to help students reach their full potential, apply below to become a tutor. All tutors must have achieved grade 7 in the subjects they wish to teach.</p>
-        <form class="careers-form" id="careers-form">
-          <div>
-            <label for="careers-name">Full Name</label>
-            <input type="text" id="careers-name" name="name" required />
-          </div>
-          <div>
-            <label for="careers-email">Email</label>
-            <input type="email" id="careers-email" name="email" required />
-          </div>
-          <div>
-            <label for="careers-about">About You</label>
-            <textarea id="careers-about" name="about" rows="4" placeholder="Tell us about your IB experience, teaching philosophy, and why you'd be a great tutor." required></textarea>
-          </div>
-          <button type="submit">Send</button>
-        </form>
-        <div id="careers-success" style="display:none;color:var(--accent-blue);margin-top:1rem;text-align:center;font-weight:600;">Thank you! Your application has been prepared in your email app.</div>
-      </div>
-    </div>
+
+
   </div>
 
   <!-- Packages Section (hidden by default) -->
@@ -2158,41 +2317,82 @@
       </section>
       <section id="packages-table" style="margin-top:3rem;">
         <h2>All Packages</h2>
-        <div class="packages-list" style="max-width:900px;margin:0 auto;">
-          <div style="display:flex;align-items:center;background:#0a1020;color:#fff;font-weight:700;font-size:1.08rem;padding:1.1em 0.7em;border-radius:16px 16px 0 0;box-shadow:0 2px 8px #4a90e220;">
-            <div style="flex:1.5 1 0;">Package</div>
-            <div style="flex:1 1 0;text-align:center;">Price</div>
-            <div style="flex:3 1 0;">Details</div>
+        <div class="packages-grid">
+
+          <div class="package-card">
+            <div class="package-header">
+              <h3>Single Session</h3>
+              <div class="package-price">£60</div>
+            </div>
+            <p class="package-duration">1 hour</p>
+            <p class="package-description">Flexible scheduling, any subject, highly efficient lesson</p>
           </div>
-          <div style="display:flex;align-items:center;background:#fff;padding:1.1em 0.7em;font-size:1.05rem;border-bottom:1.5px solid #000080;">
-            <div style="flex:1.5 1 0;font-weight:600;color:var(--accent-blue);">Single Session (1 hour)</div>
-            <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£60</div>
-            <div style="flex:3 1 0;color:var(--muted);">Flexible scheduling, any subject, highly efficient lesson</div>
+          <div class="package-card">
+            <div class="package-header">
+              <h3>Monthly</h3>
+              <div class="package-price">£450</div>
+            </div>
+            <p class="package-duration">8 hours</p>
+            <p class="package-description">Includes progress reports, all sessions online</p>
           </div>
-          <div style="display:flex;align-items:center;background:#f8fafb;padding:1.1em 0.7em;font-size:1.05rem;border-bottom:1.5px solid #000080;">
-            <div style="flex:1.5 1 0;font-weight:600;color:var(--accent-blue);">Monthly (8 hours)</div>
-            <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£450</div>
-            <div style="flex:3 1 0;color:var(--muted);">Includes progress reports, all sessions online</div>
+          <div class="package-card">
+            <div class="package-header">
+              <h3>IA Review</h3>
+              <div class="package-price">£60–£100</div>
+            </div>
+            <p class="package-duration">Variable</p>
+            <p class="package-description">Comprehensive review and feedback for your IB Internal Assessment by experienced IB examiners and tutors</p>
           </div>
-          <div style="display:flex;align-items:center;background:#fff;padding:1.1em 0.7em;font-size:1.05rem;border-bottom:1.5px solid #000080;">
-            <div style="flex:1.5 1 0;font-weight:600;color:var(--accent-blue);">IA Review</div>
-            <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£60–£100</div>
-            <div style="flex:3 1 0;color:var(--muted);">Comprehensive review and feedback for your IB Internal Assessment by experienced IB examiners and tutors</div>
+          <div class="package-card">
+            <div class="package-header">
+              <h3>EE Review</h3>
+              <div class="package-price">£150–£200</div>
+            </div>
+            <p class="package-duration">Variable</p>
+            <p class="package-description">Detailed Extended Essay review with actionable feedback to maximize your marks</p>
           </div>
-          <div style="display:flex;align-items:center;background:#f8fafb;padding:1.1em 0.7em;font-size:1.05rem;border-bottom:1.5px solid #000080;">
-            <div style="flex:1.5 1 0;font-weight:600;color:var(--accent-blue);">EE Review</div>
-            <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£150–£200</div>
-            <div style="flex:3 1 0;color:var(--muted);">Detailed Extended Essay review with actionable feedback to maximize your marks</div>
+          <div class="package-card">
+            <div class="package-header">
+              <h3>University Advising</h3>
+              <div class="package-price">£65</div>
+            </div>
+            <p class="package-duration">1 hour</p>
+            <p class="package-description">Personalized university admissions guidance and application support</p>
           </div>
-          <div style="display:flex;align-items:center;background:#fff;padding:1.1em 0.7em;font-size:1.05rem;border-bottom:1.5px solid #000080;">
-            <div style="flex:1.5 1 0;font-weight:600;color:var(--accent-blue);">University Advising (1 hour)</div>
-            <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£65</div>
-            <div style="flex:3 1 0;color:var(--muted);">Personalized university admissions guidance and application support</div>
+          <div class="package-card">
+            <div class="package-header">
+              <h3>Mock Interviews</h3>
+              <div class="package-price">£80</div>
+            </div>
+            <p class="package-duration">1 hour</p>
+            <p class="package-description">One hour of realistic university or job interview practice with expert feedback and tips for improvement</p>
           </div>
-          <div style="display:flex;align-items:center;background:#f8fafb;padding:1.1em 0.7em;font-size:1.05rem;border-radius:0 0 16px 16px;">
-            <div style="flex:1.5 1 0;font-weight:600;color:var(--accent-blue);">Mock Interviews</div>
-            <div style="flex:1 1 0;text-align:center;font-size:1.3rem;font-weight:700;color:var(--navy);">£80</div>
-            <div style="flex:3 1 0;color:var(--muted);">One hour of realistic university or job interview practice with expert feedback and tips for improvement</div>
+          
+          <div class="package-card">
+            <div class="package-header">
+              <h3>EPQ Review</h3>
+              <div class="package-price">£150–£200</div>
+            </div>
+            <p class="package-duration">Variable</p>
+            <p class="package-description">Comprehensive review and feedback for your Extended Project Qualification with expert guidance and actionable improvements</p>
+          </div>
+          
+          <div class="package-card">
+            <div class="package-header">
+              <h3>TOK Guidance & Review</h3>
+              <div class="package-price">£65</div>
+            </div>
+            <p class="package-duration">1 hour</p>
+            <p class="package-description">Expert Theory of Knowledge guidance, essay review, and presentation support to maximize your TOK marks</p>
+          </div>
+          
+          <div class="package-card">
+            <div class="package-header">
+              <h3>Personalised Study Plan</h3>
+              <div class="package-price">£100</div>
+            </div>
+            <p class="package-duration">One-time</p>
+            <p class="package-description">Custom study strategy tailored to your learning style, goals, and schedule for optimal academic performance</p>
           </div>
         </div>
       </section>
@@ -2260,6 +2460,60 @@
     </div>
   </div>
 
+  <!-- Careers Section (hidden by default) -->
+  <div id="careers-section" style="display:none;">
+    <section class="hero" style="margin-bottom:2.5rem;">
+      <div class="hero-text">
+        <h1>Join Our Team</h1>
+        <p>Become a tutor at 777tutoring and help students achieve their academic potential. We're looking for passionate, high-achieving individuals to join our team.</p>
+      </div>
+      <div class="hero-img">
+        <img src="see through logo.png" alt="Careers at 777tutoring" />
+      </div>
+    </section>
+    <div class="container">
+      <section id="careers-content">
+        <div class="unified-advising-content">
+          <div class="careers-logo">
+            <img src="see through logo.png" alt="777 Tutoring Logo" />
+          </div>
+          <h2>Become a Tutor at 777tutoring</h2>
+          <p>We're always looking for passionate, high-achieving individuals to join our team. If you have excelled in IB, A Levels, or other curricula and want to help students reach their full potential, apply below to become a tutor.</p>
+          
+          <form class="careers-form" id="careers-form">
+            <div class="form-group">
+              <label for="careers-name">Full Name</label>
+              <input type="text" id="careers-name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="careers-email">Email</label>
+              <input type="email" id="careers-email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="careers-about">About You</label>
+              <textarea id="careers-about" name="about" rows="4" placeholder="Tell us about your academic experience, teaching philosophy, and why you'd be a great tutor." required></textarea>
+            </div>
+            <button type="submit" class="careers-submit-btn">
+              <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+              Send Application
+            </button>
+          </form>
+          
+          <div id="careers-success" class="careers-success">
+            <svg width="48" height="48" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4"/>
+              <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+            </svg>
+            <h3>Application Sent!</h3>
+            <p>Thank you! Your application has been prepared in your email app.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
   <footer>
     <div class="footer-content">
       <div class="logo"><img src="see through logo.png" alt="777 Tutoring Logo" /></div>
@@ -2270,7 +2524,7 @@
         <a href="#the-process">The Process</a>
         <a href="#packages">Packages</a>
         <a href="#testimonials">Testimonials & FAQ</a>
-        <a href="#careers-section">Careers</a>
+        <a href="#careers">Careers</a>
       </div>
       <div class="footer-social">
         <a href="mailto:admin@777tutoring.com" title="Email" aria-label="Email">
@@ -2291,27 +2545,8 @@
   </footer>
 
   <script>
-    // Careers modal popup logic
+    // Careers section logic
     const careersLink = document.getElementById('careers-link');
-    const careersModal = document.getElementById('careers-modal');
-    const closeCareersModal = document.getElementById('close-careers-modal');
-    if (careersLink && careersModal && closeCareersModal) {
-      careersLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        careersModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      });
-      closeCareersModal.addEventListener('click', function() {
-        careersModal.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-      careersModal.addEventListener('click', function(e) {
-        if (e.target === careersModal) {
-          careersModal.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    }
 
     // IB/A Level/Who We Are section toggle logic
     const ibLink = document.getElementById('ib-link');
@@ -2325,57 +2560,82 @@
     const packagesSection = document.getElementById('packages-section');
     const whoWeAreSection = document.getElementById('who-we-are-section');
     const theProcessSection = document.getElementById('the-process-section');
-    const mainContent = document.querySelectorAll('body > .hero, body > .container, body > section:not(#a-level-section):not(#packages-section):not(#who-we-are-section):not(#the-process-section), body > div:not(#a-level-section):not(#packages-section):not(#who-we-are-section):not(#the-process-section):not(.modal-overlay)');
+    const careersSection = document.getElementById('careers-section');
+    const mainContent = document.querySelectorAll('body > .hero, body > .container, body > section:not(#a-level-section):not(#packages-section):not(#who-we-are-section):not(#the-process-section):not(#careers-section), body > div:not(#a-level-section):not(#packages-section):not(#who-we-are-section):not(#the-process-section):not(#careers-section):not(.modal-overlay)');
 
     function showIB() {
       if (aLevelSection) aLevelSection.style.display = 'none';
       if (packagesSection) packagesSection.style.display = 'none';
       if (whoWeAreSection) whoWeAreSection.style.display = 'none';
       if (theProcessSection) theProcessSection.style.display = 'none';
+      if (careersSection) careersSection.style.display = 'none';
       mainContent.forEach(el => { if (el) el.style.display = ''; });
       ibLink.classList.add('active');
       aLevelLink.classList.remove('active');
       if (packagesLink) packagesLink.classList.remove('active');
       if (whoWeAreLink) whoWeAreLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
+      if (careersLink) careersLink.classList.remove('active');
     }
     function showALevel() {
       if (aLevelSection) aLevelSection.style.display = '';
       if (packagesSection) packagesSection.style.display = 'none';
       if (whoWeAreSection) whoWeAreSection.style.display = 'none';
       if (theProcessSection) theProcessSection.style.display = 'none';
+      if (careersSection) careersSection.style.display = 'none';
       mainContent.forEach(el => { if (el) el.style.display = 'none'; });
       aLevelLink.classList.add('active');
       ibLink.classList.remove('active');
       if (packagesLink) packagesLink.classList.remove('active');
       if (whoWeAreLink) whoWeAreLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
+      if (careersLink) careersLink.classList.remove('active');
     }
     function showPackages() {
       if (aLevelSection) aLevelSection.style.display = 'none';
       if (packagesSection) packagesSection.style.display = '';
       if (whoWeAreSection) whoWeAreSection.style.display = 'none';
       if (theProcessSection) theProcessSection.style.display = 'none';
+      if (careersSection) careersSection.style.display = 'none';
       mainContent.forEach(el => { if (el) el.style.display = 'none'; });
       if (packagesLink) packagesLink.classList.add('active');
       ibLink.classList.remove('active');
       aLevelLink.classList.remove('active');
       if (whoWeAreLink) whoWeAreLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
+      if (careersLink) careersLink.classList.remove('active');
     }
     function showWhoWeAre() {
       if (aLevelSection) aLevelSection.style.display = 'none';
       if (packagesSection) packagesSection.style.display = 'none';
       if (whoWeAreSection) whoWeAreSection.style.display = '';
       if (theProcessSection) theProcessSection.style.display = 'none';
+      if (careersSection) careersSection.style.display = 'none';
       mainContent.forEach(el => { if (el) el.style.display = 'none'; });
       if (whoWeAreLink) whoWeAreLink.classList.add('active');
       ibLink.classList.remove('active');
       aLevelLink.classList.remove('active');
       if (packagesLink) packagesLink.classList.remove('active');
       if (theProcessLink) theProcessLink.classList.remove('active');
+      if (careersLink) careersLink.classList.remove('active');
     }
-    if (ibLink && aLevelLink && packagesLink && whoWeAreLink && theProcessLink && testimonialsLink && careersLinkHeader) {
+    
+    function showCareers() {
+      if (aLevelSection) aLevelSection.style.display = 'none';
+      if (packagesSection) packagesSection.style.display = 'none';
+      if (whoWeAreSection) whoWeAreSection.style.display = 'none';
+      if (theProcessSection) theProcessSection.style.display = 'none';
+      if (careersSection) careersSection.style.display = '';
+      mainContent.forEach(el => { if (el) el.style.display = 'none'; });
+      if (careersLink) careersLink.classList.add('active');
+      ibLink.classList.remove('active');
+      aLevelLink.classList.remove('active');
+      if (packagesLink) packagesLink.classList.remove('active');
+      if (whoWeAreLink) whoWeAreLink.classList.remove('active');
+      if (theProcessLink) theProcessLink.classList.remove('active');
+    }
+    
+    if (ibLink && aLevelLink && packagesLink && whoWeAreLink && theProcessLink && testimonialsLink && careersLink) {
       ibLink.addEventListener('click', function(e) {
         e.preventDefault();
         showIB();
@@ -2405,6 +2665,7 @@
         if (aLevelSection) aLevelSection.style.display = 'none';
         if (packagesSection) packagesSection.style.display = 'none';
         if (whoWeAreSection) whoWeAreSection.style.display = 'none';
+        if (careersSection) careersSection.style.display = 'none';
         mainContent.forEach(el => { if (el) el.style.display = 'none'; });
         if (theProcessSection) theProcessSection.style.display = '';
         document.body.classList.remove('a-level-active');
@@ -2412,6 +2673,7 @@
         aLevelLink.classList.remove('active');
         if (packagesLink) packagesLink.classList.remove('active');
         if (whoWeAreLink) whoWeAreLink.classList.remove('active');
+        if (careersLink) careersLink.classList.remove('active');
         theProcessLink.classList.add('active');
       });
       testimonialsLink.addEventListener('click', function(e) {
@@ -2426,9 +2688,10 @@
           }
         }, 100);
       });
-      careersLinkHeader.addEventListener('click', function(e) {
+      careersLink.addEventListener('click', function(e) {
         e.preventDefault();
-        openCareersModal();
+        showCareers();
+        document.body.classList.remove('a-level-active');
       });
     }
     // Ensure correct background on page load
@@ -2501,6 +2764,7 @@
             if (aLevelSection) aLevelSection.style.display = 'none';
             if (packagesSection) packagesSection.style.display = 'none';
             if (whoWeAreSection) whoWeAreSection.style.display = 'none';
+            if (careersSection) careersSection.style.display = 'none';
             mainContent.forEach(el => { if (el) el.style.display = 'none'; });
             if (theProcessSection) theProcessSection.style.display = '';
             document.body.classList.remove('a-level-active');
@@ -2508,6 +2772,7 @@
             aLevelLink.classList.remove('active');
             if (packagesLink) packagesLink.classList.remove('active');
             if (whoWeAreLink) whoWeAreLink.classList.remove('active');
+            if (careersLink) careersLink.classList.remove('active');
             theProcessLink.classList.add('active');
           }
         },
@@ -2523,7 +2788,7 @@
             }, 100);
           }
         },
-        { id: 'careers-link-mobile', action: openCareersModal }
+        { id: 'careers-link-mobile', action: showCareers }
       ];
       mobileLinks.forEach(link => {
         var el = document.getElementById(link.id);
@@ -2548,6 +2813,7 @@
         showIB();
         document.body.classList.remove('a-level-active');
         if (theProcessSection) theProcessSection.style.display = 'none';
+        if (careersSection) careersSection.style.display = 'none';
         // Scroll to top
         window.scrollTo({ top: 0, behavior: 'smooth' });
         // Close mobile nav if open
@@ -2573,6 +2839,7 @@
             if (aLevelSection) aLevelSection.style.display = 'none';
             if (packagesSection) packagesSection.style.display = 'none';
             if (whoWeAreSection) whoWeAreSection.style.display = 'none';
+            if (careersSection) careersSection.style.display = 'none';
             mainContent.forEach(el => { if (el) el.style.display = 'none'; });
             if (theProcessSection) theProcessSection.style.display = '';
             document.body.classList.remove('a-level-active');
@@ -2580,6 +2847,7 @@
             aLevelLink.classList.remove('active');
             if (packagesLink) packagesLink.classList.remove('active');
             if (whoWeAreLink) whoWeAreLink.classList.remove('active');
+            if (careersLink) careersLink.classList.remove('active');
             theProcessLink.classList.add('active');
           }
         },
@@ -2595,7 +2863,7 @@
             }, 100);
           }
         },
-        { selector: '.footer-links a[href="#careers-section"]', action: openCareersModal }
+        { selector: '.footer-links a[href="#careers"]', action: showCareers }
       ];
       footerLinks.forEach(link => {
         document.querySelectorAll(link.selector).forEach(el => {
@@ -2608,19 +2876,11 @@
     }
     setupFooterNavLinks();
 
-    // Ensure all 'Careers' links always open the modal
-    function openCareersModal() {
-      const careersModal = document.getElementById('careers-modal');
-      if (careersModal) {
-        careersModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    }
-    // Attach to all anchors with href='#careers-section'
-    document.querySelectorAll('a[href="#careers-section"]').forEach(link => {
+    // Ensure all 'Careers' links always show the careers section
+    document.querySelectorAll('a[href="#careers"]').forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
-        openCareersModal();
+        showCareers();
         // Close mobile nav if open
         var mobileNavOverlay = document.getElementById('mobile-nav-overlay');
         if (mobileNavOverlay) mobileNavOverlay.style.display = 'none';
